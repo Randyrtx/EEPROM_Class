@@ -18,7 +18,7 @@ Full documentation can be found here: {tbd}
 
 ## Simple Object use with EEPROM_Class
 ### User-defined data object
-```
+```cpp
     struct SettingsObject
     {
         char userName[16];
@@ -29,22 +29,22 @@ Full documentation can be found here: {tbd}
     SettingsObject mySettings = {"", "", ""};
 ```
 ### Class instantiation and startup
-```
+```cpp
     EEPROM_Class<SettingsObject> myEEPROM;
 ```
 ### Initialize the class object
-```
+```cpp
     // Initialize the data object
     myEEPROM.begin(0, mySettings);
 ```
 ### Read object from EEPROM into the RAM object
-```
+```cpp
     // Fetch object from EEPROM
     myEEPROM.readObject(mySettings);
 ```
 
 ### Class-provided user configuration data object
-```
+```cpp
 struct SettingsObject
 {
     char userName[16];
@@ -57,7 +57,7 @@ struct SettingsObject
 };
 ```
 ### Class instantiation and startup
-```
+```cpp
     // User Configuration Settings Object
     UserSettingsClass mySettings;
 
