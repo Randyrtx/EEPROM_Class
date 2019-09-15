@@ -1,5 +1,5 @@
 
-# EEPROM_Class Library for Particle                                        {#mainpage}
+# EEPROM_Class Library for Particle
 
 This library implement classes for managing data objects stored in the emulated EEPROM of Particle devices.
 

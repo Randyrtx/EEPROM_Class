@@ -12,55 +12,36 @@
 #include <Particle.h>
 #include "UserSettingsClass.h"
 
+bool UserSettingsClass::begin(uint16_t address)
+{
+    bool flag;
+    _adr_checksum = address;
+    _adr_object = _adr_checksum + sizeof(_checksum);
+    _eepromSize = sizeof(_mySettings) + sizeof(_checksum);
+    EEPROM.get(_adr_checksum, _checksum);
+    Log.trace("_adr_checksum: %d, _adr_object: %d, _eepromSize: %d, checksum: 0x%04X", _adr_checksum, _adr_object, _eepromSize, _checksum);
+
+    flag = readObject(_mySettings);
+    if (!flag)
+    {
+        Log.error("UserSettingsClass data invaild, reinitializing...");
+        reinitialize();
+    }
+
+    return flag;
+}
+
+
 /**
- * @brief Initialize the User Settings objects (fill from EEPROM)
+ * @brief Reinitialize Data Objects and EEPROM with defaults
  * 
- * @return true 
- * @return false 
- * 
- * Verifies storage integrity, if invalid then reinitialize with default values
  */
-// bool UserSettingsClass::begin()
-// {
-//     // Verify Integrity
-//     if (getObject(_mySettings))
-//     {
-//         Log.info("User Settings successfully loaded from EEPROM.");
-//         return true;
-//     }
-
-//     else
-//     {
-//         Log.error("EEPROM User Settings Object corrupted, reinitializing...");
-//         // Reinitialize Objects with defaults and load EEPROM
-//         strcpy(_mySettings.userName, DEFAULT_USER_NAME);
-//         strcpy(_mySettings.password, DEFAULT_USER_PW);
-//         _mySettings.timeZone = DEFAULT_USER_TZ;
-//         _mySettings.dstOffset = DEFAULT_USER_DSTOFFSET;
-//         _mySettings.dstEnabled = DEFAULT_USER_DSTENABLE;
-//         strcpy(_mySettings.hostName, DEFAULT_USER_HOSTNAME);
-//         _mySettings.antennaType = DEFAULT_USER_ANTENNA;
-
-//         // Reload EEPROM
-
-//         writeObject(_mySettings);
-
-//         // Return false so caller knows
-//         return false;
-//     }
-// }
-/******************************************************************************
- * Reinitialize Data Objects and EEPROM with defaults
- * This function must be updated as new objects are added
- ******************************************************************************/
 void UserSettingsClass::reinitialize()
 {
     Log.trace("Initializing EEPROM User Settings to defaults.");
 
     // Set local data to defaults
 
-    strcpy(_mySettings.userName, DEFAULT_USER_NAME);
-    strcpy(_mySettings.password, DEFAULT_USER_PW);
     _mySettings.timeZone = DEFAULT_USER_TZ;
     _mySettings.dstOffset = DEFAULT_USER_DSTOFFSET;
     _mySettings.dstEnabled = DEFAULT_USER_DSTENABLE;
@@ -71,7 +52,6 @@ void UserSettingsClass::reinitialize()
 
     writeObject(_mySettings);
 
-    Log.trace("User: Name %s, Password: %s", _mySettings.userName, _mySettings.password);
     Log.trace("Time Settings -- Timezone: %d, DST Offset: %f, DST Enabled: %s", _mySettings.timeZone, _mySettings.dstOffset, (_mySettings.dstEnabled) ? "Yes" : "No");
     Log.trace("Hostname: %s", _mySettings.hostName);
     switch (_mySettings.antennaType)
@@ -93,15 +73,13 @@ void UserSettingsClass::reinitialize()
     }
 }
 
-/******************************************************************************
- * For Debug: Print contents of the User Settings object
- * This function must be updated as new objects are added
- ******************************************************************************/
+/**
+ * @brief Print contents of the User Settings object to the default log handler
+ * 
+ */
 void UserSettingsClass::logUserData()
 {
     Log.info("Stored User Data from EEPROM:");
-    Log.info("User Name: %s", _mySettings.userName);
-    Log.info("Password: %s", _mySettings.password);
     Log.info("Timezone: %d", _mySettings.timeZone);
     Log.info("DST Offset: %4.1f", _mySettings.dstOffset);
     Log.info("DST Enabled: %s", (_mySettings.dstEnabled) ? "Yes" : "No");
@@ -126,45 +104,6 @@ void UserSettingsClass::logUserData()
     }
 
     Log.info("Checksum: 0x%04X\n", _checksum);
-}
-
-bool UserSettingsClass::setUserName(String userName)
-{
-    // Range check:
-    if (userName.length() > (sizeof(_mySettings.userName) - 1))
-    {
-        strncpy(_mySettings.userName, userName, sizeof(_mySettings.userName) - 1);
-        _mySettings.userName[sizeof(_mySettings.userName) - 1] = '\0';
-        writeObject(_mySettings);
-        Log.warn("User name too long, truncated.");
-        return false;
-    }
-    else
-    {
-        strcpy(_mySettings.userName, userName);
-        writeObject(_mySettings);
-        return true;
-    }
-
-}
-
-bool UserSettingsClass::setPassword(String password)
-{
-    // Range check:
-    if (password.length() > (sizeof(_mySettings.password) - 1))
-    {
-        strncpy(_mySettings.password, password, sizeof(_mySettings.password) - 1);
-        _mySettings.password[sizeof(_mySettings.password) - 1] = '\0';
-        writeObject(_mySettings);
-        Log.warn("Password too long, truncated.");
-        return false;
-    }
-    else
-    {
-        strcpy(_mySettings.password, password);
-        writeObject(_mySettings);
-        return true;
-    }
 }
 
 bool UserSettingsClass::setHostName(String hostName)

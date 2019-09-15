@@ -24,24 +24,22 @@ var NAVTREE =
 [
   [ "EEPROM_Class", "index.html", [
     [ "EEPROM_Class Library for Particle", "index.html", [
-      [ "EEPROM_Class", "index.html#autotoc_md5", null ],
-      [ "UserSettingsClass", "index.html#autotoc_md6", null ],
-      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md7", [
-        [ "User-defined data object", "index.html#autotoc_md8", null ],
-        [ "Class instantiation and startup", "index.html#autotoc_md9", null ],
-        [ "Initialize the class object", "index.html#autotoc_md10", null ],
-        [ "Read object from EEPROM into the RAM object", "index.html#autotoc_md11", null ],
-        [ "Class-provided user configuration data object", "index.html#autotoc_md12", null ],
-        [ "Class instantiation and startup", "index.html#autotoc_md13", null ]
+      [ "EEPROM_Class", "index.html#autotoc_md1", null ],
+      [ "UserSettingsClass", "index.html#autotoc_md2", null ],
+      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md3", [
+        [ "User-defined data object", "index.html#autotoc_md4", null ],
+        [ "Class instantiation and startup", "index.html#autotoc_md5", null ],
+        [ "Initialize the class object", "index.html#autotoc_md6", null ],
+        [ "Read object from EEPROM into the RAM object", "index.html#autotoc_md7", null ],
+        [ "Class-provided user configuration data object", "index.html#autotoc_md8", null ],
+        [ "Class instantiation and startup", "index.html#autotoc_md9", null ]
       ] ],
-      [ "Examples:", "index.html#autotoc_md14", [
-        [ "Basic Usage Example", "index.html#autotoc_md15", null ],
-        [ "Advanced Usage Example", "index.html#autotoc_md16", null ]
+      [ "Examples:", "index.html#autotoc_md10", [
+        [ "Basic Usage Example", "index.html#autotoc_md11", null ],
+        [ "Advanced Usage Example", "index.html#autotoc_md12", null ]
       ] ],
-      [ "LICENSE", "index.html#autotoc_md17", null ]
+      [ "LICENSE", "index.html#autotoc_md13", null ]
     ] ],
-    [ "Advanced Usage Example", "md_examples_advanced_usage__r_e_a_d_m_e.html", null ],
-    [ "Basic Usage Example", "md_examples_basic_usage__r_e_a_d_m_e.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

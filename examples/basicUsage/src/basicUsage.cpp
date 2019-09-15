@@ -3,18 +3,22 @@
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief 
  * @version 0.0.1
- * @date 2019-09-14
+ * @date 2019-09-15
  * 
  * @copyright Copyright (c) 2019
  * 
- * This example uses the EEPROM_Class Base Class only to demonstrate saving of basic
- * data to EEPROM.
  */
-
+ 
 #include <Particle.h>
 
 /**
- * Synopsis:
+ * @details
+ * 
+ * Basic Example to demonstrate use of the UserSettings Derived Class of the EEPROM_Class Library
+ * 
+ * This example reads the UserSettings object from EEPROM, then configures the internal clock,
+ * Wifi Antenna, and Wifi Hostname from the retrieved data.
+ * 
  */
 
 /******************************************************************************
@@ -28,25 +32,41 @@
 #define LOG_RTX
 
 /**
- * @brief Define DEBUG_RTX for more verbose messages from the Class Functions
+ * @brief Define DEBUG_RTX for more verbose log messages from the Class Functions
  * 
  */
 #define DEBUG_RTX
 
 #ifdef LOG_RTX
 #ifdef DEBUG_RTX
-SerialLogHandler logHandler(115200, LOG_LEVEL_ALL);
+Serial1LogHandler logHandler(115200, LOG_LEVEL_ALL);
 #else
-SerialLogHandler logHandler(115200, LOG_LEVEL_ERROR);
+Serial1LogHandler logHandler(115200, LOG_LEVEL_ERROR);
 #endif
 #endif
 
 /******************************************************************************
- * Class Instatiations
+ * Class Instantiations
  ******************************************************************************/
+#include "UserSettingsClass.h" 
 
-#include "EEPROM_Class.h"
+/**
+ * @brief Define an EEPROM address for the Settings Object.
+ * 
+ */
+#define myAddress 0
 
+
+//! @brief User's Default Time Zone
+#define USER_TZ -8
+//! @brief User's Default Daylight Savings Time Offset
+#define USER_DSTOFFSET 1.0
+//! @brief User's Default DST Enable Flag
+#define USER_DSTENABLE true
+//! @brief User's Default wifi Hostname
+#define USER_HOSTNAME "NewHostName"
+//! @brief User's Default Antenna Type
+#define USER_ANTENNA_TYPE ANT_INTERNAL
 
 /******************************************************************************
  * Hardware pin definitions
@@ -58,37 +78,25 @@ SerialLogHandler logHandler(115200, LOG_LEVEL_ERROR);
  */
 #define ledMain D7
 
-/**
- * @brief Create a simple object to hold user settings
- * 
- */
-struct SettingsObject
-{
-    char userName[16];
-    char password[16];
-	char hostName[32];
-};
-
-SettingsObject mySettings = {"", "", ""};
-
-#define myAddress 0
-
-/**
- * @brief Create an EEPROM instance to hold the object
- * 
- */
-// EEPROM_Class<SettingsObject> myEEPROM(myAddress, mySettings);
-EEPROM_Class<SettingsObject> myEEPROM;
-
 /******************************************************************************
  * Setup
  ******************************************************************************/
 /**
  * @brief Setup Function
  * 
+ * - Instantiate the settings data object
+ * - Setup basic I/O
+ * - Run basic demostration of the UserSetting Class Object
+ * 
  */
 void setup()
 {
+	// User Configuration Settings Object
+	// Place this here if settings will only be used in setup.
+	// Place globally if settings will be changed elsewhere in the application.
+
+	UserSettingsClass mySettings;
+
 	/******************************************************************************
 	 * Setup basic environment for demonstration
 	 ******************************************************************************/
@@ -97,59 +105,120 @@ void setup()
 	pinMode(ledMain, OUTPUT);
 
 	// Setup Serial  and wait until the user acknowledges
-	Serial.begin(115200);
+	Serial1.begin(115200);
 	delay(5000);
 
-	Serial.println("***** Hit any key to start ***** ");
-	while (!Serial.available())
+	Serial1.print("\n***** Hit any key to start *****\n\n");
+	while (!Serial1.available())
 		;
-	Serial.read();
+	Serial1.read();
 
 	/******************************************************************************
 	 * Start the demonstration
 	 ******************************************************************************/
-	Serial.println("***** Starting Usage Test");
+	Serial1.print("***** Starting Usage Test\n\n");
 	delay(1000);
 
-	// check the EEPROM 
+	Serial1.println("***** Retrieving current contents. If it fails, reload defaults.\n");
 
-	// Initialize the data object
-	myEEPROM.begin(0, mySettings);
-
-	// Fetch the EEPROM image (will fail on first run)
-	Serial.println("***** Attempting load of object from EEPROM...");
-	if (myEEPROM.readObject(mySettings))
+	// Load Data from EEPROM (This will fail on first run so defaults will be loaded into EEPROM)
+	if (!mySettings.begin(myAddress))
 	{
-		Serial.printlnf("***** Success! User name: %s - Password %s - Hostname %s", mySettings.userName, mySettings.password, mySettings.hostName);
-
-		// Now change something and save it
-		Serial.println("***** Loading EEPROM with new data...");
-		strcpy(mySettings.userName, "NewName");
-		strcpy(mySettings.password, "NewPassword");
-		strcpy(mySettings.hostName, "NewHostName");
-		myEEPROM.writeObject(mySettings);
-		Serial.printlnf("***** Loaded EEPROM with User name: %s - Password: %s - Hostname: %s", mySettings.userName, mySettings.password, mySettings.hostName);
-		Serial.println("***** Cycle power now to verify that it got saved.");
-
+		Serial1.println("!!!!! EEPROM Data Corrupted, User Settings reset to defaults.\n");
 	}
-	else
-	{
-		// Save some data to load
-		Serial.println("***** Loading EEPROM with some data...");
-		strcpy(mySettings.userName, "abcde");
-		strcpy(mySettings.password, "12345");
-		strcpy(mySettings.hostName, "SomeHostName");
-		myEEPROM.writeObject(mySettings);
-		Serial.printlnf("***** Loaded EEPROM with User name: %s - Password %s - Hostname %s", mySettings.userName, mySettings.password, mySettings.hostName);
-		Serial.println("***** Cycle power now to verify that it got saved.");
-	}
+
+	// display the settings retrieved
+	Serial1.println();
+	mySettings.logUserData();
+
+	Serial1.println("***** Hit any key to continue ***** \n");
+	// wait for user to hit a key
+	while (!Serial1.available())
+		;
+	Serial1.read();
 	
+	// Force a "corrupt" of the data object to force a reload with defaults
+	Serial1.println("***** Corrupting the data block in EEPROM to force a reload...\n");
+	
+	/** Write to first byte after checksum, just to simulate a fault.
+	 *  We normally would avoid manual access to any of the EEPROM space 
+	 *  occupied by the data objects.
+	 */
+	EEPROM.write(myAddress + sizeof(uint16_t), 0); 
+    delay(1000);
+    
+	if (!mySettings.verifyChecksum());
+	{
+		Serial1.println("\n!!!!! EEPROM Data Corrupted, Resetting to defaults.\n");
+		mySettings.reinitialize();
+		Serial1.println();
+	}
+
+	// display the settings retrieved
+	mySettings.logUserData();
+
+	Serial1.println("***** Hit any key to continue *****\n ");
+	// wait for user to hit a key
+	while (!Serial1.available())
+		;
+	Serial1.read();
+	
+	// Now change settings to the defaults we defined earlier
+	Serial1.println("*****  Now changing to my defaults...\n");
+	mySettings.setTimeZone(USER_TZ);
+	mySettings.setDSTEnabled(USER_DSTOFFSET);
+	mySettings.setAntennaType(USER_ANTENNA_TYPE);
+	Serial1.println();
+	mySettings.logUserData(); 
+
+	Serial1.println("***** Hit any key to continue ***** \n");
+	// wait for user to hit a key
+	while (!Serial1.available())
+		;
+	Serial1.read();
+
+	/******************************************************************************
+	 * Now we can use the retrieved settings to configure the application
+	 ******************************************************************************/
+	if (true) // Set to true to run the following section
+	{
+		Serial1.println("***** Configuring application user settings ***** \n");
+		// This will set the internal clock settings according to the saved user data
+		Serial1.println("Settings for the clock...");
+		Time.zone(mySettings.getTimeZone());		  // Set time zone
+		Time.setDSTOffset(mySettings.getDstOffset()); // Set DST offset
+		if (mySettings.isDSTEnabled())
+		{
+			Time.beginDST(); // Set Daylight Savings Time flag
+		}
+
+		// This sets the Wifi Hostname
+		WiFi.setHostname(mySettings.getHostName());
+		Serial1.printlnf("Wifi Hostname: %s", mySettings.getHostName());
+
+		// This sets the antenna type
+		switch (mySettings.getAntennaType())
+		{
+		case ANT_INTERNAL:
+			Serial1.println("Setting Antenna Type to Internal");
+			break;
+		case ANT_EXTERNAL:
+			Serial1.println("Setting Antenna Type to External");
+			break;
+		case ANT_AUTO:
+			Serial1.println("Setting Antenna Type to Auto");
+			break;
+		default:
+			break;
+		}
+		WiFi.selectAntenna(mySettings.getAntennaType());
+	}
 
 	/******************************************************************************
 	 * End of demonstration
 	 ******************************************************************************/
-	delay(1000);
-	Serial.println("***** Test Halted ***** ");
+	Serial1.println("\n***** Test Halted ***** \n");
+    Serial1.println("Since we're done with the settings, we can dispose of the object until needed again.\n");
 }
 
 /******************************************************************************

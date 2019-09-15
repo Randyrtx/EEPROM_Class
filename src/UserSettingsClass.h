@@ -7,15 +7,17 @@
  * 
  * @copyright Copyright (c) 2019
  * 
+ * @history
+ * 
+ * | Date       | Change |
+ * -----------------------------------------------------
+ * | 2019-09-15 | Removed user name and password items |
+ * 
  */
 #pragma once
 #include <Particle.h>
 #include "EEPROM_Class.h"
 
-//! @brief Default user name
-#define DEFAULT_USER_NAME "DefaultUser"
-//! @brief Default Password
-#define DEFAULT_USER_PW "DefaultPW"
 //! @brief Default Timezone
 #define DEFAULT_USER_TZ -6
 //! @brief Default Daylight Savings Time Offset
@@ -41,17 +43,6 @@
  */
 struct SettingsObject
 {
-    /** User Name Field.
-     * Null-terminated, 15-character limit
-     */
-    char userName[16];
-    /** Password Field
-     * Null-terminated, 15-character limit
-     */
-    char password[16];
-    /** Local Timezone
-     * Range: -12 to +14 hours from UTC
-     */
     int8_t timeZone;
     /** Daylight Savings Time Offset
      * Offset in hours from standard time when daylight savings time is in effect
@@ -90,7 +81,7 @@ class UserSettingsClass : public EEPROM_Class<SettingsObject>
 private:
     /** Working copy of the Data Object that will reside in EEPROM
      */
-    SettingsObject _mySettings = {"", "", 0, 0, false, "", ANT_INTERNAL};
+    SettingsObject _mySettings = {0, 0, false, "", ANT_INTERNAL};
 
     // Private functions for internal use
 
@@ -116,16 +107,7 @@ public:
      * 
      * Checks integrity of EEPROM image before load, reinitializes to defaults if invalid.
      */
-    bool begin(uint16_t address)
-	{
-		_adr_checksum = address;
-		_adr_object = _adr_checksum + sizeof(_checksum);
-		_eepromSize = sizeof(_mySettings) + sizeof(_checksum);
-		EEPROM.get(_adr_checksum, _checksum);
-		Log.trace("_adr_checksum: %d, _adr_object: %d, _eepromSize: %d, checksum: 0x%04X", _adr_checksum, _adr_object, _eepromSize, _checksum);
-
-		return readObject(_mySettings);
-	}
+    bool begin(uint16_t address);
 
     /** Reinitializes data object and EEPROM image to defaults
      * 
@@ -141,15 +123,6 @@ public:
     /******************************************
      * getters
      ******************************************/
-
-    /** Get User Name.
-     * @return char* to user name.
-     */
-    char *getUserName() { return _mySettings.userName; }
-    /** Get Password.
-     * @return char* to Password.
-     */
-    char *getPassword() { return _mySettings.password; }
 
     /** Get Time Zone
      * @return int8_t Time Zone value, UTC -12/+14 hours
@@ -178,18 +151,6 @@ public:
     /******************************************
      * setters
      ******************************************/
-
-    /** set user name
-     * @param[in] name string containing new user name (15-character limit)
-     * @return bool false if input truncated, else true
-     */
-    bool setUserName(String name);
-
-    /** set password
-     * @param[in] password string containing new password (15-character limit)
-     * @return bool false if input truncated, else true
-     */
-    bool setPassword(String password);
 
     /**
      * @brief Set the Time Zone object
@@ -245,7 +206,6 @@ public:
             Log.warn("Invalid Antenna Type, setting not changed.");
             return false;
         }
-        
             
     }
 };

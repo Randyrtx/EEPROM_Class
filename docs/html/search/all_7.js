@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isdstenabled_37',['isDSTEnabled',['../class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf',1,'UserSettingsClass']]]
+  ['isdstenabled_35',['isDSTEnabled',['../class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf',1,'UserSettingsClass']]]
 ];
