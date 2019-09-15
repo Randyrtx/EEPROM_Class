@@ -91,37 +91,27 @@ $(document).ready(function(){initNavTree('md_examples_basic_usage__r_e_a_d_m_e.h
 <div class="title">Basic Usage Example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A Particle project named usage</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Welcome to your project!</h1>
-<p>Every new Particle project is composed of 3 important elements that you'll see have been created in your project directory for usage.</p>
-<h3><a class="anchor" id="autotoc_md11"></a>
-&lt;tt&gt;/src&lt;/tt&gt; folder:</h3>
-<p>This is the source folder that contains the firmware files for your project. It should <em>not</em> be renamed. Anything that is in this folder when you compile your project will be sent to our compile service and compiled into a firmware binary for the Particle device that you have targeted.</p>
-<p>If your application contains multiple files, they should all be included in the <code>src</code> folder. If your firmware depends on Particle libraries, those dependencies are specified in the <code>project.properties</code> file referenced below.</p>
-<h3><a class="anchor" id="autotoc_md12"></a>
-&lt;tt&gt;.ino&lt;/tt&gt; file:</h3>
-<p>This file is the firmware that will run as the primary application on your Particle device. It contains a <code><a class="el" href="advanced_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup.">setup()</a></code> and <code><a class="el" href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="loop">loop()</a></code> function, and can be written in Wiring or C/C++. For more information about using the Particle firmware API to create firmware for your Particle device, refer to the <a href="https://docs.particle.io/reference/firmware/">Firmware Reference</a> section of the Particle documentation.</p>
-<h3><a class="anchor" id="autotoc_md13"></a>
-&lt;tt&gt;project.properties&lt;/tt&gt; file:</h3>
-<p>This is the file that specifies the name and version number of the libraries that your project depends on. Dependencies are added automatically to your <code>project.properties</code> file when you add a library to a project using the <code>particle library add</code> command in the CLI or add a library in the Desktop IDE.</p>
-<h1><a class="anchor" id="autotoc_md14"></a>
-Adding additional files to your project</h1>
-<h3><a class="anchor" id="autotoc_md15"></a>
-Projects with multiple sources</h3>
-<p>If you would like add additional files to your application, they should be added to the <code>/src</code> folder. All files in the <code>/src</code> folder will be sent to the Particle Cloud to produce a compiled binary.</p>
-<h3><a class="anchor" id="autotoc_md16"></a>
-Projects with external libraries</h3>
-<p>If your project includes a library that has not been registered in the Particle libraries system, you should create a new folder named <code>/lib/&lt;libraryname&gt;/src</code> under <code>/&lt;project dir&gt;</code> and add the <code>.h</code>, <code>.cpp</code> &amp; <code>library.properties</code> files for your library there. Read the <a href="https://docs.particle.io/guide/tools-and-features/libraries/">Firmware Libraries guide</a> for more details on how to develop libraries. Note that all contents of the <code>/lib</code> folder and subfolders will also be sent to the Cloud for compilation.</p>
-<h1><a class="anchor" id="autotoc_md17"></a>
-Compiling your project</h1>
-<p>When you're ready to compile your project, make sure you have the correct Particle device target selected and run <code>particle compile &lt;platform&gt;</code> in the CLI or click the Compile button in the Desktop IDE. The following files in your project folder will be sent to the compile service:</p>
-<ul>
-<li>Everything in the <code>/src</code> folder, including your <code>.ino</code> application file</li>
-<li>The <code>project.properties</code> file for your project</li>
-<li>Any libraries stored under <code>lib/&lt;libraryname&gt;/src</code> </li>
-</ul>
-</div></div><!-- contents -->
+<div class="textblock"><p>Demostrates use of the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> for a small user-supplied data object.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Object Definition</h2>
+<div class="fragment"><div class="line">struct SettingsObject</div>
+<div class="line">{</div>
+<div class="line">    char userName[16];</div>
+<div class="line">    char password[16];</div>
+<div class="line">    char hostName[32];</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">SettingsObject mySettings = {&quot;&quot;, &quot;&quot;, &quot;&quot;};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Class instantiation</h2>
+<div class="fragment"><div class="line">EEPROM_Class&lt;SettingsObject&gt; myEEPROM;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">// Initialize the data object</div>
+<div class="line">myEEPROM.begin(0, mySettings);</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md4"></a>
+Read object from EEPROM into the RAM object</h2>
+<div class="fragment"><div class="line">// Fetch object from EEPROM</div>
+<div class="line">myEEPROM.readObject(mySettings);</div>
+</div><!-- fragment --><div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

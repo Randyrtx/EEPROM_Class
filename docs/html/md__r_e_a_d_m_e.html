@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EEPROM_Class: EEPROM_Class Library</title>
+<title>EEPROM_Class: README</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,48 +88,32 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> Library </div>  </div>
+<div class="title">README </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A Particle library for <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a></p>
-<h1><a class="anchor" id="autotoc_md19"></a>
-Welcome to your library!</h1>
-<p>To get started, modify the sources in [src](src). Rename the example folder inside [examples](examples) to a more meaningful name and add additional examples in separate folders.</p>
-<p>To compile your example you can use <code>particle compile examples/usage</code> command in <a href="https://docs.particle.io/guide/tools-and-features/cli#update-your-device-remotely">Particle CLI</a> or use our <a href="https://docs.particle.io/guide/tools-and-features/dev/#compiling-code">Desktop IDE</a>.</p>
-<p>Libraries can also depend on other libraries. To add a dependency use <a href="https://docs.particle.io/guide/tools-and-features/cli#adding-a-library"><code>particle library add</code></a> or <a href="https://docs.particle.io/guide/tools-and-features/dev/#managing-libraries">library management</a> in Desktop IDE.</p>
-<p>After the library is done you can upload it with <code>particle library upload</code> or <code>Upload</code> command in the IDE. This will create a private (only visible by you) library that you can use in other projects. If you wish to make your library public, use <code>particle library publish</code> or <code>Publish</code> command.</p>
-<p><em>TODO: update this README</em></p>
-<h1><a class="anchor" id="autotoc_md20"></a>
-Usage</h1>
-<p>Connect XYZ hardware, add the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> library to your project and follow this simple example:</p>
-<div class="fragment"><div class="line">#include &quot;EEPROM_Class.h&quot;</div>
-<div class="line">EEPROM_Class eEPROM_Class;</div>
-<div class="line"> </div>
-<div class="line">void setup() {</div>
-<div class="line">  eEPROM_Class.begin();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">void loop() {</div>
-<div class="line">  eEPROM_Class.process();</div>
-<div class="line">}</div>
-</div><!-- fragment --><p>See the [examples](examples) folder for more details.</p>
-<h1><a class="anchor" id="autotoc_md21"></a>
-Documentation</h1>
-<p>TODO: Describe <code><a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a></code></p>
-<h1><a class="anchor" id="autotoc_md22"></a>
-Contributing</h1>
-<p>Here's how you can make changes to this library and eventually contribute those changes back.</p>
-<p>To get started, <a href="https://help.github.com/articles/cloning-a-repository/">clone the library from GitHub to your local machine</a>.</p>
-<p>Change the name of the library in <code>library.properties</code> to something different. You can add your name at then end.</p>
-<p>Modify the sources in &lt;src&gt; and &lt;examples&gt; with the new behavior.</p>
-<p>To compile an example, use <code>particle compile examples/usage</code> command in <a href="https://docs.particle.io/guide/tools-and-features/cli#update-your-device-remotely">Particle CLI</a> or use our <a href="https://docs.particle.io/guide/tools-and-features/dev/#compiling-code">Desktop IDE</a>.</p>
-<p>After your changes are done you can upload them with <code>particle library upload</code> or <code>Upload</code> command in the IDE. This will create a private (only visible by you) library that you can use in other projects. Do <code>particle library add EEPROM_Class_myname</code> to add the library to a project on your machine or add the EEPROM_Class_myname library to a project on the Web IDE or Desktop IDE.</p>
-<p>At this point, you can create a <a href="https://help.github.com/articles/about-pull-requests/">GitHub pull request</a> with your changes to the original library.</p>
-<p>If you wish to make your library public, use <code>particle library publish</code> or <code>Publish</code> command.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
-LICENSE</h1>
+<div class="textblock"><p>{#mainpage} </p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+EEPROM_Class Library for Particle</h1>
+<p>This library implement classes for managing data objects stored in the emulated EEPROM of Particle devices.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+EEPROM_Class</h2>
+<p>Implements the basic, low-level functions for storing and retrieving generic data objects in EEPROM. Integrity is maintained via a 16-bit checksum which is verifed before data is retrieved, and updated whenever the object is rewritten. May be used standalone for small data objects or used in derived classes for specialized data objects.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+UserSettingsClass</h2>
+<p>Derives from the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> base class to implement a specialized data object containing common system settings, such as user/password, clock settings, etc.</p>
+<p>Full documentation can be found here: {tbd}</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Examples:</h2>
+<h3><a class="anchor" id="autotoc_md6"></a>
+&lt;a href="examples/basicUsage"&gt;Basic Usage Example&lt;/a&gt;</h3>
+<p>Demostrates use of the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> for a small user-supplied data object.</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+&lt;a href="examples/advancedUsage"&gt;Advanced Usage Example&lt;/a&gt;</h3>
+<p>Demonstrates use of the <a class="el" href="class_user_settings_class.html" title="The UserSettings Class.">UserSettingsClass</a> for common system settings.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+LICENSE</h2>
 <p>Copyright 2019 Randy E. Rainwater</p>
-<p>Licensed under the &lt;insert your="" choice="" of="" license="" here&gt;=""&gt; license </p>
+<p>Licensed under the [MIT License](LICENSE) </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

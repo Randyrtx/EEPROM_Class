@@ -101,9 +101,9 @@ $(document).ready(function(){initNavTree('basic_usage_8cpp_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef LOG_RTX</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef DEBUG_RTX</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;Serial1LogHandler logHandler(115200, LOG_LEVEL_ALL);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;SerialLogHandler logHandler(115200, LOG_LEVEL_ALL);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;Serial1LogHandler logHandler(115200, LOG_LEVEL_ERROR);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;SerialLogHandler logHandler(115200, LOG_LEVEL_ERROR);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('basic_usage_8cpp_source.html','');});
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Enable the onboard LED</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    pinMode(<a class="code" href="basic_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>, OUTPUT);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Setup Serial1  and wait until the user acknowledges</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Setup Serial  and wait until the user acknowledges</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    Serial.begin(115200);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    delay(5000);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
