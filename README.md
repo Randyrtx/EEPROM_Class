@@ -10,7 +10,7 @@ This library implements classes for managing data objects stored in the emulated
 template <class OBJ>
 class EEPROM_Class {}
 ```
-Implements the basic, low-level functions for storing and retrieving generic data objects in EEPROM. Integrity is maintained via a 16-bit checksum which is verifed before data is retrieved, and updated whenever the object is rewritten. May be used standalone for small data objects or used in derived classes for specialized data objects.
+Implements the basic, low-level functions for storing and retrieving generic data objects in EEPROM. Integrity is maintained via a 16-bit checksum which is verifed before data is retrieved, and updated whenever the entries in the object are changed. May be used standalone for small data objects or used in derived classes for specialized data objects.
 
 Implemented as a template class so that objects of any type may be used.
 
@@ -24,7 +24,7 @@ Derives from the EEPROM_Class base class to implement a specialized data object 
 [API Documentation](https://randyrtx.github.io/EEPROM_Class/)
 
 ## Simple Object use with EEPROM_Class
-### User-defined data object
+### User-defined data object (example)
 ```cpp
     // Define structure of the object
     struct UserCredentials
@@ -48,6 +48,12 @@ Derives from the EEPROM_Class base class to implement a specialized data object 
         // Valid Image Loaded
     else
         // Checksum error, image not loaded
+```
+### Updating the object
+```cpp
+    strcpy(myCredentials.userName, "NewUserName");
+    strcpy(myCredentials.password, "NewPassword");
+    myEEPROM.writeObject(myCredentials);
 ```
 Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [Examples](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples) for further details.
 
