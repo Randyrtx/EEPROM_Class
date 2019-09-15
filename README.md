@@ -90,7 +90,7 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
 ```
 #### Typical use:
 ```cpp
-    Time.zone(mySettings.getTimeZone());		  // Set time zone
+    Time.zone(mySettings.getTimeZone()); // Set time zone
     Time.setDSTOffset(mySettings.getDstOffset()); // Set DST offset
     if (mySettings.isDSTEnabled())
     {
