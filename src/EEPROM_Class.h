@@ -1,7 +1,7 @@
 /**
  * @file EEPROM_Class.h
  * @author Randy E. Rainwater (randyrtx@outlook.com)
- * @brief Base Class for EEPROM Storage Blocks
+ * @brief EEPROM Class Header
  * @version 0.0.1
  * @date 2019-09-13
  * 

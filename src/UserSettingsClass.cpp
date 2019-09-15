@@ -1,7 +1,7 @@
 /**
  * @file UserSettingsClass.cpp
  * @author Randy E. Rainwater (randyrtx@outlook.com)
- * @brief 
+ * @brief  User Configurations Settings Class Member Functions
  * @version 0.0.1
  * @date 2019-09-13
  * 

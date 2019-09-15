@@ -1,7 +1,7 @@
 /**
  * @file EEPROM_Class.cpp
  * @author Randy E. Rainwater (randyrtx@outlook.com)
- * @brief 
+ * @brief EEPROM Class Member Functions
  * @version 0.0.1
  * @date 2019-09-13
  * 
