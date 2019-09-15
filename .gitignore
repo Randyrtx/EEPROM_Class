@@ -1,0 +1,6 @@
+# VSCode/Particle Workbench
+lib/
+target/
+**/.vscode/
+*.bin
+doxygen_log.txt
