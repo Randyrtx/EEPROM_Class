@@ -1,4 +1,4 @@
-{#mainpage}
+[comment]: <> {#mainpage}
 ## EEPROM_Class Library for Particle 
 
 This library implement classes for managing data objects stored in the emulated EEPROM of Particle devices.
@@ -18,11 +18,11 @@ Full documentation can be found here: {tbd}
 
 ## Examples:
 
-# [Advanced Usage Example](examples/advancedUsage)
+[Advanced Usage Example](examples/advancedUsage)
 
 Demonstrates use of the UserSettingsClass for common system settings.
 
-# [Basic Usage Example](examples/basicUsage)
+[Basic Usage Example](examples/basicUsage)
 
 Demostrates use of the EEPROM_Class for a small user-supplied data object.
 
