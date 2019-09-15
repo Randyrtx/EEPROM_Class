@@ -7,7 +7,6 @@
  * 
  * @copyright Copyright (c) 2019
  * 
- * @history
  * 
  * | Date       | Change |
  * -----------------------------------------------------
@@ -38,11 +37,15 @@
  */
 
 /**
- * @brief 
+ * @brief User Settings Object
  * 
  */
 struct SettingsObject
 {
+    /**
+     * Local Time Zone
+     * 
+     */
     int8_t timeZone;
     /** Daylight Savings Time Offset
      * Offset in hours from standard time when daylight savings time is in effect
@@ -72,8 +75,6 @@ struct SettingsObject
  * A checksum is maintained to verify integrity of the EEPROM object image.
  * 
  * @note All access to the individual data items is made via getter/setter functions.
- * @todo Create a parent class to encapsulate all generic EEPROM block management functions. UserSettings would then become
- * a derived class. This would better support additional classes for storing additional sets of data in independant EEPROM blocks.
 
  */
 class UserSettingsClass : public EEPROM_Class<SettingsObject>

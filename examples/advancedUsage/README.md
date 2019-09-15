@@ -1,6 +1,6 @@
 # Advanced Usage Example
 
-Demostrates use of the EEPROM_Class for a small user-defined data object.
+Demonstrates use of the EEPROM_Class for a small user-defined data object.
 
 ### User-defined data object (example)
 ```cpp

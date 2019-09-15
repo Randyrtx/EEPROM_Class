@@ -88,67 +88,70 @@ $(document).ready(function(){initNavTree('basic_usage_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">basicUsage.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;Particle.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_user_settings_class_8h_source.html">UserSettingsClass.h</a>&quot;</code><br />
 </div>
 <p><a href="basic_usage_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_settings_object.html">SettingsObject</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Object Structure.  <a href="struct_settings_object.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ac36d43adaa383ae8f5c9be36245c4a09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09">LOG_RTX</a></td></tr>
-<tr class="memdesc:ac36d43adaa383ae8f5c9be36245c4a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synopsis:  <a href="basic_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09">More...</a><br /></td></tr>
+<tr class="memdesc:ac36d43adaa383ae8f5c9be36245c4a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial log handler.  <a href="basic_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09">More...</a><br /></td></tr>
 <tr class="separator:ac36d43adaa383ae8f5c9be36245c4a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a">DEBUG_RTX</a></td></tr>
-<tr class="memdesc:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define DEBUG_RTX for more verbose messages from the Class Functions.  <a href="basic_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a">More...</a><br /></td></tr>
+<tr class="memdesc:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define DEBUG_RTX for more verbose log messages from the Class Functions.  <a href="basic_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a">More...</a><br /></td></tr>
 <tr class="separator:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>&#160;&#160;&#160;D7</td></tr>
-<tr class="memdesc:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Instatiations.  <a href="basic_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">More...</a><br /></td></tr>
-<tr class="separator:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ef0f42274f06308612e31501d6c0f8f"><td class="memItemLeft" align="right" valign="top"><a id="a5ef0f42274f06308612e31501d6c0f8f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>myAddress</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a5ef0f42274f06308612e31501d6c0f8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a5ef0f42274f06308612e31501d6c0f8f">myAddress</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a5ef0f42274f06308612e31501d6c0f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Instantiations.  <a href="basic_usage_8cpp.html#a5ef0f42274f06308612e31501d6c0f8f">More...</a><br /></td></tr>
 <tr class="separator:a5ef0f42274f06308612e31501d6c0f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="memItemLeft" align="right" valign="top"><a id="a37c6eadcbd1274474bc6dbbcba2d831d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a37c6eadcbd1274474bc6dbbcba2d831d">USER_TZ</a>&#160;&#160;&#160;-8</td></tr>
+<tr class="memdesc:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default Time Zone. <br /></td></tr>
+<tr class="separator:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1b435af7c112d903be4bcd33b9a4a5"><td class="memItemLeft" align="right" valign="top"><a id="aac1b435af7c112d903be4bcd33b9a4a5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#aac1b435af7c112d903be4bcd33b9a4a5">USER_DSTOFFSET</a>&#160;&#160;&#160;1.0</td></tr>
+<tr class="memdesc:aac1b435af7c112d903be4bcd33b9a4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default Daylight Savings Time Offset. <br /></td></tr>
+<tr class="separator:aac1b435af7c112d903be4bcd33b9a4a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe17f14a4325b8db40806d122628888"><td class="memItemLeft" align="right" valign="top"><a id="a0fe17f14a4325b8db40806d122628888"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a0fe17f14a4325b8db40806d122628888">USER_DSTENABLE</a>&#160;&#160;&#160;true</td></tr>
+<tr class="memdesc:a0fe17f14a4325b8db40806d122628888"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default DST Enable Flag. <br /></td></tr>
+<tr class="separator:a0fe17f14a4325b8db40806d122628888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="memItemLeft" align="right" valign="top"><a id="a14f2d794fea2d9a8f06d3f19cd0d808d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a14f2d794fea2d9a8f06d3f19cd0d808d">USER_HOSTNAME</a>&#160;&#160;&#160;&quot;NewHostName&quot;</td></tr>
+<tr class="memdesc:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default wifi Hostname. <br /></td></tr>
+<tr class="separator:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1cbf6e800c09f5a051e8d6af9dddc4"><td class="memItemLeft" align="right" valign="top"><a id="a1d1cbf6e800c09f5a051e8d6af9dddc4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a1d1cbf6e800c09f5a051e8d6af9dddc4">USER_ANTENNA_TYPE</a>&#160;&#160;&#160;ANT_INTERNAL</td></tr>
+<tr class="memdesc:a1d1cbf6e800c09f5a051e8d6af9dddc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default Antenna Type. <br /></td></tr>
+<tr class="separator:a1d1cbf6e800c09f5a051e8d6af9dddc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>&#160;&#160;&#160;D7</td></tr>
+<tr class="memdesc:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware pin definitions.  <a href="basic_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">More...</a><br /></td></tr>
+<tr class="separator:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae7c73c4245fc9220fcd49afbe44c2a67"><td class="memItemLeft" align="right" valign="top"><a id="ae7c73c4245fc9220fcd49afbe44c2a67"></a>
-SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandler</b> (115200, LOG_LEVEL_ALL)</td></tr>
-<tr class="separator:ae7c73c4245fc9220fcd49afbe44c2a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ddec8be76152ecfa02ad3f2200f450"><td class="memItemLeft" align="right" valign="top"><a id="a27ddec8be76152ecfa02ad3f2200f450"></a>
+Serial1LogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a27ddec8be76152ecfa02ad3f2200f450">logHandler</a> (115200, LOG_LEVEL_ALL)</td></tr>
+<tr class="memdesc:a27ddec8be76152ecfa02ad3f2200f450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log handler. <br /></td></tr>
+<tr class="separator:a27ddec8be76152ecfa02ad3f2200f450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup.  <a href="basic_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">More...</a><br /></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
 <tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">loop  <a href="basic_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">More...</a><br /></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a21e44d61c4f77428189f6a3316f395c8"><td class="memItemLeft" align="right" valign="top"><a id="a21e44d61c4f77428189f6a3316f395c8"></a>
-<a class="el" href="struct_settings_object.html">SettingsObject</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mySettings</b> = {&quot;&quot;, &quot;&quot;, &quot;&quot;}</td></tr>
-<tr class="separator:a21e44d61c4f77428189f6a3316f395c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d5dc5ddf5cc75867650e4a062278405"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a>&lt; <a class="el" href="struct_settings_object.html">SettingsObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="basic_usage_8cpp.html#a5d5dc5ddf5cc75867650e4a062278405">myEEPROM</a></td></tr>
-<tr class="memdesc:a5d5dc5ddf5cc75867650e4a062278405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an EEPROM instance to hold the object.  <a href="basic_usage_8cpp.html#a5d5dc5ddf5cc75867650e4a062278405">More...</a><br /></td></tr>
-<tr class="separator:a5d5dc5ddf5cc75867650e4a062278405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Randy E. Rainwater (<a href="#" onclick="location.href='mai'+'lto:'+'ran'+'dy'+'rtx'+'@o'+'utl'+'oo'+'k.c'+'om'; return false;">randy<span style="display: none;">.nosp@m.</span>rtx@<span style="display: none;">.nosp@m.</span>outlo<span style="display: none;">.nosp@m.</span>ok.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2019-09-14</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019</dd></dl>
-<p>This example uses the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> Base Class only to demonstrate saving of basic data to EEPROM. </p>
+<dl class="section date"><dt>Date</dt><dd>2019-09-15</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -164,9 +167,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Define DEBUG_RTX for more verbose messages from the Class Functions. </p>
+<p>Define DEBUG_RTX for more verbose log messages from the Class Functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00033">33</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00037">37</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -182,11 +185,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Class Instatiations. </p>
-<p>Hardware pin definitions</p>
+<p>Hardware pin definitions. </p>
 <p>Blue Led on the Photon Module </p>
 
-<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00056">56</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00077">77</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -202,11 +204,31 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Synopsis: </p>
-<p>Serial log handler</p>
+<p>Serial log handler. </p>
+<p>Basic Example to demonstrate use of the UserSettings Derived Class of the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> Library</p>
+<p>This example reads the UserSettings object from EEPROM, then configures the internal clock, Wifi Antenna, and Wifi Hostname from the retrieved data.</p>
 <p>Define LOG_RTX to enable error logging to terminal </p>
 
-<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00027">27</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00031">31</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5ef0f42274f06308612e31501d6c0f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef0f42274f06308612e31501d6c0f8f">&#9670;&nbsp;</a></span>myAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define myAddress&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Class Instantiations. </p>
+<p>Define an EEPROM address for the Settings Object. </p>
+
+<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00056">56</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -229,7 +251,7 @@ Variables</h2></td></tr>
 <p>loop </p>
 <p>Main Loop </p>
 
-<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00154">154</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00223">223</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -249,31 +271,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Setup. </p>
-<p>Setup Function </p>
+<p>Setup Function</p>
+<ul>
+<li>Instantiate the settings data object</li>
+<li>Setup basic I/O</li>
+<li>Run basic demostration of the UserSetting Class Object </li>
+</ul>
 <p>Setup basic environment for demonstration</p>
 <p>Start the demonstration</p>
+<p>Write to first byte after checksum, just to simulate a fault. We normally would avoid manual access to any of the EEPROM space occupied by the data objects.</p>
+<p>Now we can use the retrieved settings to configure the application</p>
 <p>End of demonstration</p>
 
-<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00086">86</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a5d5dc5ddf5cc75867650e4a062278405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d5dc5ddf5cc75867650e4a062278405">&#9670;&nbsp;</a></span>myEEPROM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a>&lt;<a class="el" href="struct_settings_object.html">SettingsObject</a>&gt; myEEPROM</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Create an EEPROM instance to hold the object. </p>
-
-<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00078">78</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="basic_usage_8cpp_source.html#l00089">89</a> of file <a class="el" href="basic_usage_8cpp_source.html">basicUsage.cpp</a>.</p>
 
 </div>
 </div>

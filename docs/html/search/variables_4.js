@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['myeeprom_118',['myEEPROM',['../basic_usage_8cpp.html#a5d5dc5ddf5cc75867650e4a062278405',1,'basicUsage.cpp']]]
+  ['timezone_108',['timeZone',['../struct_settings_object.html#abb5ea8be7eb88601ecb4b161e0a80305',1,'SettingsObject']]]
 ];

@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('advanced_usage_8cpp.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;Particle.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_user_settings_class_8h_source.html">UserSettingsClass.h</a>&quot;</code><br />
 </div>
 <p><a href="advanced_usage_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -102,50 +103,56 @@ $(document).ready(function(){initNavTree('advanced_usage_8cpp.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ac36d43adaa383ae8f5c9be36245c4a09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09">LOG_RTX</a></td></tr>
-<tr class="memdesc:ac36d43adaa383ae8f5c9be36245c4a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synopsis:  <a href="advanced_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09">More...</a><br /></td></tr>
+<tr class="memdesc:ac36d43adaa383ae8f5c9be36245c4a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial log handler.  <a href="advanced_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09">More...</a><br /></td></tr>
 <tr class="separator:ac36d43adaa383ae8f5c9be36245c4a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a">DEBUG_RTX</a></td></tr>
-<tr class="memdesc:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define DEBUG_RTX for more verbose messages from the Class Functions.  <a href="advanced_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a">More...</a><br /></td></tr>
+<tr class="memdesc:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define DEBUG_RTX for more verbose log messages from the Class Functions.  <a href="advanced_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a">More...</a><br /></td></tr>
 <tr class="separator:abac7cbed718c23b6bfc1b96ca0b0ec5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ef0f42274f06308612e31501d6c0f8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a5ef0f42274f06308612e31501d6c0f8f">myAddress</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:a5ef0f42274f06308612e31501d6c0f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Instantiations.  <a href="advanced_usage_8cpp.html#a5ef0f42274f06308612e31501d6c0f8f">More...</a><br /></td></tr>
-<tr class="separator:a5ef0f42274f06308612e31501d6c0f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af55e8c51eb649983dc307ddf43a46ee6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#af55e8c51eb649983dc307ddf43a46ee6">USER_NAME</a>&#160;&#160;&#160;&quot;NewUser&quot;</td></tr>
-<tr class="memdesc:af55e8c51eb649983dc307ddf43a46ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define default user settings to use later.  <a href="advanced_usage_8cpp.html#af55e8c51eb649983dc307ddf43a46ee6">More...</a><br /></td></tr>
-<tr class="separator:af55e8c51eb649983dc307ddf43a46ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7767df853fa6ba5742a0d743e92875d"><td class="memItemLeft" align="right" valign="top"><a id="ac7767df853fa6ba5742a0d743e92875d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#ac7767df853fa6ba5742a0d743e92875d">USER_PW</a>&#160;&#160;&#160;&quot;NewPW&quot;</td></tr>
-<tr class="memdesc:ac7767df853fa6ba5742a0d743e92875d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Password. <br /></td></tr>
-<tr class="separator:ac7767df853fa6ba5742a0d743e92875d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="memItemLeft" align="right" valign="top"><a id="a37c6eadcbd1274474bc6dbbcba2d831d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a37c6eadcbd1274474bc6dbbcba2d831d">USER_TZ</a>&#160;&#160;&#160;-6</td></tr>
-<tr class="memdesc:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Timezone. <br /></td></tr>
+<tr class="memitem:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a37c6eadcbd1274474bc6dbbcba2d831d">USER_TZ</a>&#160;&#160;&#160;-8</td></tr>
+<tr class="memdesc:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Instantiations.  <a href="advanced_usage_8cpp.html#a37c6eadcbd1274474bc6dbbcba2d831d">More...</a><br /></td></tr>
 <tr class="separator:a37c6eadcbd1274474bc6dbbcba2d831d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac1b435af7c112d903be4bcd33b9a4a5"><td class="memItemLeft" align="right" valign="top"><a id="aac1b435af7c112d903be4bcd33b9a4a5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#aac1b435af7c112d903be4bcd33b9a4a5">USER_DSTOFFSET</a>&#160;&#160;&#160;1.0</td></tr>
-<tr class="memdesc:aac1b435af7c112d903be4bcd33b9a4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Daylight Savings Time Offset. <br /></td></tr>
+<tr class="memdesc:aac1b435af7c112d903be4bcd33b9a4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default Daylight Savings Time Offset. <br /></td></tr>
 <tr class="separator:aac1b435af7c112d903be4bcd33b9a4a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fe17f14a4325b8db40806d122628888"><td class="memItemLeft" align="right" valign="top"><a id="a0fe17f14a4325b8db40806d122628888"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a0fe17f14a4325b8db40806d122628888">USER_DSTENABLE</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:a0fe17f14a4325b8db40806d122628888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default DST Enable Flag. <br /></td></tr>
+<tr class="memdesc:a0fe17f14a4325b8db40806d122628888"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default DST Enable Flag. <br /></td></tr>
 <tr class="separator:a0fe17f14a4325b8db40806d122628888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="memItemLeft" align="right" valign="top"><a id="a14f2d794fea2d9a8f06d3f19cd0d808d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a14f2d794fea2d9a8f06d3f19cd0d808d">USER_HOSTNAME</a>&#160;&#160;&#160;&quot;NewHostName&quot;</td></tr>
-<tr class="memdesc:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default wifi Hostname. <br /></td></tr>
+<tr class="memdesc:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default wifi Hostname. <br /></td></tr>
 <tr class="separator:a14f2d794fea2d9a8f06d3f19cd0d808d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa993b345162efc4d1de638172b78367a"><td class="memItemLeft" align="right" valign="top"><a id="aa993b345162efc4d1de638172b78367a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#aa993b345162efc4d1de638172b78367a">ANTENNA_TYPE</a>&#160;&#160;&#160;ANT_INTERNAL</td></tr>
-<tr class="memdesc:aa993b345162efc4d1de638172b78367a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Antenna Type. <br /></td></tr>
-<tr class="separator:aa993b345162efc4d1de638172b78367a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1cbf6e800c09f5a051e8d6af9dddc4"><td class="memItemLeft" align="right" valign="top"><a id="a1d1cbf6e800c09f5a051e8d6af9dddc4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a1d1cbf6e800c09f5a051e8d6af9dddc4">USER_ANTENNA_TYPE</a>&#160;&#160;&#160;ANT_INTERNAL</td></tr>
+<tr class="memdesc:a1d1cbf6e800c09f5a051e8d6af9dddc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default Antenna Type. <br /></td></tr>
+<tr class="separator:a1d1cbf6e800c09f5a051e8d6af9dddc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55e8c51eb649983dc307ddf43a46ee6"><td class="memItemLeft" align="right" valign="top"><a id="af55e8c51eb649983dc307ddf43a46ee6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#af55e8c51eb649983dc307ddf43a46ee6">USER_NAME</a>&#160;&#160;&#160;&quot;NewUserName&quot;</td></tr>
+<tr class="memdesc:af55e8c51eb649983dc307ddf43a46ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default user name. <br /></td></tr>
+<tr class="separator:af55e8c51eb649983dc307ddf43a46ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198fd6abc61f7245c473dcb2752370e7"><td class="memItemLeft" align="right" valign="top"><a id="a198fd6abc61f7245c473dcb2752370e7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a198fd6abc61f7245c473dcb2752370e7">USER_PASSWORD</a>&#160;&#160;&#160;&quot;NewPassword&quot;</td></tr>
+<tr class="memdesc:a198fd6abc61f7245c473dcb2752370e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default password. <br /></td></tr>
+<tr class="separator:a198fd6abc61f7245c473dcb2752370e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87b7c1c79746a7fa3546adb2e0ace4f"><td class="memItemLeft" align="right" valign="top"><a id="aa87b7c1c79746a7fa3546adb2e0ace4f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:aa87b7c1c79746a7fa3546adb2e0ace4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative address of the mySettings object in EEPROM. <br /></td></tr>
+<tr class="separator:aa87b7c1c79746a7fa3546adb2e0ace4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee908792e407d8f93a63f419cefbffd8"><td class="memItemLeft" align="right" valign="top"><a id="aee908792e407d8f93a63f419cefbffd8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>&#160;&#160;&#160;<a class="el" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a> + sizeof(mySettings)</td></tr>
+<tr class="memdesc:aee908792e407d8f93a63f419cefbffd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative address of the myCredentials object in EEPROM. <br /></td></tr>
+<tr class="separator:aee908792e407d8f93a63f419cefbffd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>&#160;&#160;&#160;D7</td></tr>
 <tr class="memdesc:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware pin definitions.  <a href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">More...</a><br /></td></tr>
 <tr class="separator:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae7c73c4245fc9220fcd49afbe44c2a67"><td class="memItemLeft" align="right" valign="top"><a id="ae7c73c4245fc9220fcd49afbe44c2a67"></a>
-SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandler</b> (115200, LOG_LEVEL_ALL)</td></tr>
-<tr class="separator:ae7c73c4245fc9220fcd49afbe44c2a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ddec8be76152ecfa02ad3f2200f450"><td class="memItemLeft" align="right" valign="top"><a id="a27ddec8be76152ecfa02ad3f2200f450"></a>
+Serial1LogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a27ddec8be76152ecfa02ad3f2200f450">logHandler</a> (115200, LOG_LEVEL_ALL)</td></tr>
+<tr class="memdesc:a27ddec8be76152ecfa02ad3f2200f450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log handler. <br /></td></tr>
+<tr class="separator:a27ddec8be76152ecfa02ad3f2200f450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup.  <a href="advanced_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">More...</a><br /></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,9 +163,8 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandle
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Randy E. Rainwater (<a href="#" onclick="location.href='mai'+'lto:'+'ran'+'dy'+'rtx'+'@o'+'utl'+'oo'+'k.c'+'om'; return false;">randy<span style="display: none;">.nosp@m.</span>rtx@<span style="display: none;">.nosp@m.</span>outlo<span style="display: none;">.nosp@m.</span>ok.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2019-09-14</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019</dd></dl>
-<p>This example uses the <a class="el" href="class_user_settings_class.html" title="The UserSettings Class.">UserSettingsClass</a> to demonstrate the use of a derived class for working with a more detailed EEPROM object. </p>
+<dl class="section date"><dt>Date</dt><dd>2019-09-15</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -174,9 +180,9 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandle
       </table>
 </div><div class="memdoc">
 
-<p>Define DEBUG_RTX for more verbose messages from the Class Functions. </p>
+<p>Define DEBUG_RTX for more verbose log messages from the Class Functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00034">34</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00040">40</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +201,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandle
 <p>Hardware pin definitions. </p>
 <p>Blue Led on the Photon Module </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00091">91</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00095">95</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -211,49 +217,32 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandle
       </table>
 </div><div class="memdoc">
 
-<p>Synopsis: </p>
-<p>Serial log handler</p>
+<p>Serial log handler. </p>
+<p>This example expands on the basic usage example to include a user-define data object to hold user credentials</p>
+<p>Includes the UserSettings object from the basic example for the internal clock, Wifi Antenna, and Wifi Hostname settings.</p>
+<p>Adds a custom data object using the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> Base Class for user credentials.</p>
 <p>Define LOG_RTX to enable error logging to terminal </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00028">28</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00034">34</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5ef0f42274f06308612e31501d6c0f8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ef0f42274f06308612e31501d6c0f8f">&#9670;&nbsp;</a></span>myAddress</h2>
+<a id="a37c6eadcbd1274474bc6dbbcba2d831d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37c6eadcbd1274474bc6dbbcba2d831d">&#9670;&nbsp;</a></span>USER_TZ</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define myAddress&#160;&#160;&#160;0</td>
+          <td class="memname">#define USER_TZ&#160;&#160;&#160;-8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Class Instantiations. </p>
-<p>Define an EEPROM address for the Settings Object. </p>
+<p>User's Default Time Zone </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00052">52</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af55e8c51eb649983dc307ddf43a46ee6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af55e8c51eb649983dc307ddf43a46ee6">&#9670;&nbsp;</a></span>USER_NAME</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define USER_NAME&#160;&#160;&#160;&quot;NewUser&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Define default user settings to use later. </p>
-<p>Default user name </p>
-
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00067">67</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00058">58</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +265,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandle
 <p>loop </p>
 <p>Main Loop </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00225">225</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00285">285</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -296,13 +285,18 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><b>logHandle
 </div><div class="memdoc">
 
 <p>Setup. </p>
-<p>Setup Function </p>
+<p>Setup Function</p>
+<ul>
+<li>Instantiate the settings data object</li>
+<li>Setup basic I/O</li>
+<li>Run basic demostration of the UserSetting Class Object </li>
+</ul>
 <p>Setup basic environment for demonstration</p>
 <p>Start the demonstration</p>
 <p>Now we can use the retrieved settings to configure the application</p>
 <p>End of demonstration</p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00099">99</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00107">107</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>

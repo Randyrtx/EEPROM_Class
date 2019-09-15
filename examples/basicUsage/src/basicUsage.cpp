@@ -39,6 +39,7 @@
 
 #ifdef LOG_RTX
 #ifdef DEBUG_RTX
+//! @brief Log handler
 Serial1LogHandler logHandler(115200, LOG_LEVEL_ALL);
 #else
 Serial1LogHandler logHandler(115200, LOG_LEVEL_ERROR);

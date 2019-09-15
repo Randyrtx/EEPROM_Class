@@ -6,7 +6,5 @@ var _user_settings_class_8h =
     [ "DEFAULT_USER_DSTENABLE", "_user_settings_class_8h.html#aea2bb7bcde6a76fba9ff912386973318", null ],
     [ "DEFAULT_USER_DSTOFFSET", "_user_settings_class_8h.html#a970cd3a6c0982c33471b928dbfe25f56", null ],
     [ "DEFAULT_USER_HOSTNAME", "_user_settings_class_8h.html#ad4a649231c0fc5f2b4526ea3e02b9f6f", null ],
-    [ "DEFAULT_USER_NAME", "_user_settings_class_8h.html#a16b61175ca6c7c2ae2577cfe3a84662f", null ],
-    [ "DEFAULT_USER_PW", "_user_settings_class_8h.html#a2654b1e610a2242b4e27625dd36a401e", null ],
     [ "DEFAULT_USER_TZ", "_user_settings_class_8h.html#a73dcdecc6acdad1a622cf59b7045dc13", null ]
 ];

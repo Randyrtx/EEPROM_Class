@@ -42,6 +42,7 @@
 
 #ifdef LOG_RTX
 #ifdef DEBUG_RTX
+//! @brief Log handler
 Serial1LogHandler logHandler(115200, LOG_LEVEL_ALL);
 #else
 Serial1LogHandler logHandler(115200, LOG_LEVEL_ERROR);
@@ -55,15 +56,18 @@ Serial1LogHandler logHandler(115200, LOG_LEVEL_ERROR);
 #include "UserSettingsClass.h" 
 
 
-// Define default settings and data
 //! @brief User's Default Time Zone
 #define USER_TZ -8
+
 //! @brief User's Default Daylight Savings Time Offset
 #define USER_DSTOFFSET 1.0
+
 //! @brief User's Default DST Enable Flag
 #define USER_DSTENABLE true
+
 //! @brief User's Default wifi Hostname
 #define USER_HOSTNAME "NewHostName"
+
 //! @brief User's Default Antenna Type
 #define USER_ANTENNA_TYPE ANT_INTERNAL
 
@@ -71,6 +75,16 @@ Serial1LogHandler logHandler(115200, LOG_LEVEL_ERROR);
 #define USER_NAME "NewUserName"
 //! @brief User's Default password
 #define USER_PASSWORD "NewPassword"
+
+// Define the EEPROM addresses for the data object images.
+// We will have two independant objects in EEPROM, each separately maintained.
+
+//! Relative address of the mySettings object in EEPROM
+#define mySettingsAddress 0
+
+//! Relative address of the myCredentials object in EEPROM
+#define myCredentialsAddress mySettingsAddress + sizeof(mySettings) // Make sure to account for the location and size of the previous object(s)
+
 
 
 /******************************************************************************
@@ -139,10 +153,14 @@ void setup()
     // Create an EEPROM class instance to hold the object
     EEPROM_Class<UserCredentials> myEEPROM;
 
-    // Define the EEPROM addresses for the data object images.
-    // We will have two independant objects in EEPROM, each separately maintained.
-    #define mySettingsAddress 0
-    #define myCredentialsAddress mySettingsAddress + sizeof(mySettings) // Make sure to account for the location and size of the previous object(s)
+    // // Define the EEPROM addresses for the data object images.
+    // // We will have two independant objects in EEPROM, each separately maintained.
+	
+	// // Relative address of the mySettings object in EEPROM
+    // #define mySettingsAddress 0
+
+	// // Relative address of the myCredentials object in EEPROM
+    // #define myCredentialsAddress mySettingsAddress + sizeof(mySettings) // Make sure to account for the location and size of the previous object(s)
 
     // Set following if() statement to true to invalidate objects to simulate first run
     if(false)

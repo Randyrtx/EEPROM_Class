@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['getantennatype_28',['getAntennaType',['../class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05',1,'UserSettingsClass']]],
-  ['getdstoffset_29',['getDstOffset',['../class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9',1,'UserSettingsClass']]],
-  ['gethostname_30',['getHostName',['../class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124',1,'UserSettingsClass']]],
-  ['getpassword_31',['getPassword',['../class_user_settings_class.html#a700f62bdcd0bbe7f5bccd2a397c7f1da',1,'UserSettingsClass']]],
-  ['gettimezone_32',['getTimeZone',['../class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509',1,'UserSettingsClass']]],
-  ['getusername_33',['getUserName',['../class_user_settings_class.html#ae934d887cf752524929d2ee13f9ed0cd',1,'UserSettingsClass']]]
+  ['getantennatype_25',['getAntennaType',['../class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05',1,'UserSettingsClass']]],
+  ['getdstoffset_26',['getDstOffset',['../class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9',1,'UserSettingsClass']]],
+  ['gethostname_27',['getHostName',['../class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124',1,'UserSettingsClass']]],
+  ['gettimezone_28',['getTimeZone',['../class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509',1,'UserSettingsClass']]]
 ];

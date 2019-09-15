@@ -24,23 +24,21 @@ var NAVTREE =
 [
   [ "EEPROM_Class", "index.html", [
     [ "EEPROM_Class Library for Particle", "index.html", [
-      [ "EEPROM_Class", "index.html#autotoc_md1", null ],
-      [ "UserSettingsClass", "index.html#autotoc_md2", null ],
-      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md3", [
-        [ "User-defined data object", "index.html#autotoc_md4", null ],
-        [ "Class instantiation and startup", "index.html#autotoc_md5", null ],
-        [ "Initialize the class object", "index.html#autotoc_md6", null ],
-        [ "Read object from EEPROM into the RAM object", "index.html#autotoc_md7", null ],
-        [ "Class-provided user configuration data object", "index.html#autotoc_md8", null ],
-        [ "Class instantiation and startup", "index.html#autotoc_md9", null ]
+      [ "EEPROM_Class", "index.html#autotoc_md2", null ],
+      [ "UserSettingsClass", "index.html#autotoc_md3", null ],
+      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md4", [
+        [ "User-defined data object (example)", "index.html#autotoc_md5", null ],
+        [ "Updating the object", "index.html#autotoc_md6", null ]
       ] ],
-      [ "Examples:", "index.html#autotoc_md10", [
-        [ "Basic Usage Example", "index.html#autotoc_md11", null ],
-        [ "Advanced Usage Example", "index.html#autotoc_md12", null ]
+      [ "UserSettingsClass  User Configuration Object", "index.html#autotoc_md7", [
+        [ "Data Object", "index.html#autotoc_md8", null ],
+        [ "Class instantiation and startup", "index.html#autotoc_md9", [
+          [ "Typical use:", "index.html#autotoc_md10", null ]
+        ] ]
       ] ],
-      [ "LICENSE", "index.html#autotoc_md13", null ]
+      [ "Examples:", "index.html#autotoc_md11", null ],
+      [ "LICENSE", "index.html#autotoc_md12", null ]
     ] ],
-    [ "Todo List", "todo.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -56,7 +54,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
