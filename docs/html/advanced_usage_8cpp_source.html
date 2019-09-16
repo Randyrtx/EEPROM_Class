@@ -177,142 +177,133 @@ $(document).ready(function(){initNavTree('advanced_usage_8cpp_source.html','');}
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// Create an EEPROM class instance to hold the object</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="class_e_e_p_r_o_m___class.html">EEPROM_Class&lt;UserCredentials&gt;</a> myEEPROM;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// // Define the EEPROM addresses for the data object images.</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// // We will have two independant objects in EEPROM, each separately maintained.</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// // Relative address of the mySettings object in EEPROM</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// #define mySettingsAddress 0</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// // Relative address of the myCredentials object in EEPROM</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// #define myCredentialsAddress mySettingsAddress + sizeof(mySettings) // Make sure to account for the location and size of the previous object(s)</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// Set following if() statement to true to invalidate objects to simulate first run</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        EEPROM.write(<a class="code" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>, 0);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        EEPROM.write(<a class="code" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>, 0);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    Serial.println(<span class="stringliteral">&quot;\n***** Retrieving current contents. If it fails, reload defaults.\n&quot;</span>);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Set following if() statement to true to invalidate objects to simulate first run</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Load Data from EEPROM (This will fail on first run so defaults will be loaded into EEPROM)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> (!mySettings.<a class="code" href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">begin</a>(<a class="code" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>))</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        EEPROM.write(<a class="code" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>, 0);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        EEPROM.write(<a class="code" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>, 0);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    Serial.println(<span class="stringliteral">&quot;\n***** Retrieving current contents. If it fails, reload defaults.\n&quot;</span>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// Load Data from EEPROM (This will fail on first run so defaults will be loaded into EEPROM)</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (!mySettings.<a class="code" href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">begin</a>(<a class="code" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>))</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        Serial.println(<span class="stringliteral">&quot;\n !!!!! mySettings Data Corrupted, reset to defaults.\n&quot;</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        Serial.println(<span class="stringliteral">&quot;\n***** mySettings data retrieved successfully.&quot;</span>);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// display the settings retrieved</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    Serial.println();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    mySettings.<a class="code" href="class_user_settings_class.html#a00f8138bcbadff8174a6f232fd759381">logUserData</a>();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Hit any key to continue ***** \n&quot;</span>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// wait for user to hit a key</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">while</span> (!Serial.available())</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        ;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    Serial.read();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Now Initializing and fetching the credentials object...\n&quot;</span>);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">// Now Initialize and fetch the credentials object</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// We have to do a bit more of the work to fix it if it&#39;s not valid</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// Serial.println(&quot;myEEPROM.begin(myCredentialsAddress, myCredentials)&quot;);</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (!myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(<a class="code" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>, myCredentials))</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        Serial.println(<span class="stringliteral">&quot;\n !!!!! mySettings Data Corrupted, reset to defaults.\n&quot;</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        Serial.println(<span class="stringliteral">&quot;\n***** mySettings data retrieved successfully.&quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// display the settings retrieved</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    Serial.println();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    mySettings.<a class="code" href="class_user_settings_class.html#a00f8138bcbadff8174a6f232fd759381">logUserData</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Hit any key to continue ***** \n&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// wait for user to hit a key</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">while</span> (!Serial.available())</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        ;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    Serial.read();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Now Initializing and fetching the credentials object...\n&quot;</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// Now Initialize and fetch the credentials object</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// We have to do a bit more of the work to fix it if it&#39;s not valid</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// Serial.println(&quot;myEEPROM.begin(myCredentialsAddress, myCredentials)&quot;);</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> (!myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(<a class="code" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>, myCredentials))</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// Save some default data to load</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        Serial.println(<span class="stringliteral">&quot;\n!!!!! EEPROM Data Corrupted, resetting Credentials to defaults.\n&quot;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        strcpy(myCredentials.userName, <a class="code" href="advanced_usage_8cpp.html#af55e8c51eb649983dc307ddf43a46ee6">USER_NAME</a>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        strcpy(myCredentials.password, <a class="code" href="advanced_usage_8cpp.html#a198fd6abc61f7245c473dcb2752370e7">USER_PASSWORD</a>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(myCredentials);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;\n***** Loaded EEPROM with User name: %s - Password %s&quot;</span>, myCredentials.userName, myCredentials.password);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="comment">// Save some default data to load</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        Serial.println(<span class="stringliteral">&quot;\n!!!!! EEPROM Data Corrupted, resetting Credentials to defaults.\n&quot;</span>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        strcpy(myCredentials.userName, <a class="code" href="advanced_usage_8cpp.html#af55e8c51eb649983dc307ddf43a46ee6">USER_NAME</a>);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        strcpy(myCredentials.password, <a class="code" href="advanced_usage_8cpp.html#a198fd6abc61f7245c473dcb2752370e7">USER_PASSWORD</a>);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(myCredentials);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;\n***** Loaded EEPROM with User name: %s - Password %s&quot;</span>, myCredentials.userName, myCredentials.password);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;\n***** Success! User name: %s - Password %s\n&quot;</span>, myCredentials.userName, myCredentials.password);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Hit any key to continue ***** \n&quot;</span>);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// wait for user to hit a key</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">while</span> (!Serial.available())</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        ;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    Serial.read();</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Now change something and save it</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Loading EEPROM with new data...\n&quot;</span>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    strcpy(myCredentials.userName, <span class="stringliteral">&quot;abcde&quot;</span>);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    strcpy(myCredentials.password, <span class="stringliteral">&quot;12345&quot;</span>);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(myCredentials);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    Serial.printlnf(<span class="stringliteral">&quot;\n***** Loaded EEPROM with User name: %s - Password: %s\n&quot;</span>, myCredentials.userName, myCredentials.password);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Hit any key to continue ***** \n&quot;</span>);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// wait for user to hit a key</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">while</span> (!Serial.available())</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        ;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    Serial.read();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">true</span>) <span class="comment">// Set to true to run the following section</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        Serial.println(<span class="stringliteral">&quot;***** Configuring application user settings ***** \n&quot;</span>);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="comment">// This will set the internal clock settings according to the saved user data</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;Time Zone: %d&quot;</span>, mySettings.<a class="code" href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">getTimeZone</a>());</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;DST Offset %0.2f&quot;</span>, mySettings.<a class="code" href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">getDstOffset</a>());</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;DST Enabled: %s&quot;</span>, (mySettings.<a class="code" href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">isDSTEnabled</a>()) ? <span class="stringliteral">&quot;Yes&quot;</span> : <span class="stringliteral">&quot;No&quot;</span>);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        Time.zone(mySettings.<a class="code" href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">getTimeZone</a>());          <span class="comment">// Set time zone</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        Time.setDSTOffset(mySettings.<a class="code" href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">getDstOffset</a>()); <span class="comment">// Set DST offset</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">if</span> (mySettings.<a class="code" href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">isDSTEnabled</a>())</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            Time.beginDST(); <span class="comment">// Set Daylight Savings Time flag</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">// This sets the Wifi Hostname</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        WiFi.setHostname(mySettings.<a class="code" href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">getHostName</a>());</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;Wifi Hostname: %s&quot;</span>, mySettings.<a class="code" href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">getHostName</a>());</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="comment">// This sets the antenna type</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">switch</span> (mySettings.<a class="code" href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">getAntennaType</a>())</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">case</span> ANT_INTERNAL:</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            Serial.println(<span class="stringliteral">&quot;Setting Antenna Type to Internal&quot;</span>);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">case</span> ANT_EXTERNAL:</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            Serial.println(<span class="stringliteral">&quot;Setting Antenna Type to External&quot;</span>);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">case</span> ANT_AUTO:</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            Serial.println(<span class="stringliteral">&quot;Setting Antenna Type to Auto&quot;</span>);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        Serial.println();</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        WiFi.selectAntenna(mySettings.<a class="code" href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">getAntennaType</a>());</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    Serial.printlnf(<span class="stringliteral">&quot;\n***** User name: %s&quot;</span>, myCredentials.userName);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    Serial.printlnf(<span class="stringliteral">&quot;***** Password %s\n&quot;</span>, myCredentials.password);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;\n***** Success! User name: %s - Password %s\n&quot;</span>, myCredentials.userName, myCredentials.password);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Hit any key to continue ***** \n&quot;</span>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// wait for user to hit a key</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">while</span> (!Serial.available())</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        ;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    Serial.read();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">// Now change something and save it</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Loading EEPROM with new data...\n&quot;</span>);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    strcpy(myCredentials.userName, <span class="stringliteral">&quot;abcde&quot;</span>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    strcpy(myCredentials.password, <span class="stringliteral">&quot;12345&quot;</span>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(myCredentials);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    Serial.printlnf(<span class="stringliteral">&quot;\n***** Loaded EEPROM with User name: %s - Password: %s\n&quot;</span>, myCredentials.userName, myCredentials.password);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Hit any key to continue ***** \n&quot;</span>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// wait for user to hit a key</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">while</span> (!Serial.available())</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        ;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    Serial.read();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">true</span>) <span class="comment">// Set to true to run the following section</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        Serial.println(<span class="stringliteral">&quot;***** Configuring application user settings ***** \n&quot;</span>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// This will set the internal clock settings according to the saved user data</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;Time Zone: %d&quot;</span>, mySettings.<a class="code" href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">getTimeZone</a>());</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;DST Offset %0.2f&quot;</span>, mySettings.<a class="code" href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">getDstOffset</a>());</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;DST Enabled: %s&quot;</span>, (mySettings.<a class="code" href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">isDSTEnabled</a>()) ? <span class="stringliteral">&quot;Yes&quot;</span> : <span class="stringliteral">&quot;No&quot;</span>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        Time.zone(mySettings.<a class="code" href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">getTimeZone</a>());          <span class="comment">// Set time zone</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        Time.setDSTOffset(mySettings.<a class="code" href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">getDstOffset</a>()); <span class="comment">// Set DST offset</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (mySettings.<a class="code" href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">isDSTEnabled</a>())</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            Time.beginDST(); <span class="comment">// Set Daylight Savings Time flag</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// This sets the Wifi Hostname</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        WiFi.setHostname(mySettings.<a class="code" href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">getHostName</a>());</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        Serial.printlnf(<span class="stringliteral">&quot;Wifi Hostname: %s&quot;</span>, mySettings.<a class="code" href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">getHostName</a>());</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// This sets the antenna type</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">switch</span> (mySettings.<a class="code" href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">getAntennaType</a>())</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">case</span> ANT_INTERNAL:</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            Serial.println(<span class="stringliteral">&quot;Setting Antenna Type to Internal&quot;</span>);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">case</span> ANT_EXTERNAL:</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            Serial.println(<span class="stringliteral">&quot;Setting Antenna Type to External&quot;</span>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">case</span> ANT_AUTO:</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            Serial.println(<span class="stringliteral">&quot;Setting Antenna Type to Auto&quot;</span>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        Serial.println();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        WiFi.selectAntenna(mySettings.<a class="code" href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">getAntennaType</a>());</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    Serial.printlnf(<span class="stringliteral">&quot;\n***** User name: %s&quot;</span>, myCredentials.userName);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    Serial.printlnf(<span class="stringliteral">&quot;***** Password %s\n&quot;</span>, myCredentials.password);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Cycle power when done to verify that the objects remain valid.&quot;</span>);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    Serial.println(<span class="stringliteral">&quot;\n***** Test Halted ***** \n&quot;</span>);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    Serial.println(<span class="stringliteral">&quot;Since we&#39;re done with the settings, we can dispose of the object until needed again.\n&quot;</span>);</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">  276</a></span>&#160;}</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    Serial.println(<span class="stringliteral">&quot;***** Cycle power when done to verify that the objects remain valid.&quot;</span>);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    Serial.println(<span class="stringliteral">&quot;\n***** Test Halted ***** \n&quot;</span>);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    Serial.println(<span class="stringliteral">&quot;Since we&#39;re done with the settings, we can dispose of the object until needed again.\n&quot;</span>);</div>
-<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">  285</a></span>&#160;}</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">void</span> <a class="code" href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a>()</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// I&#39;m just gonna blink &#39;cause I have nothing left to do...</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    digitalWrite(<a class="code" href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>, HIGH);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    delay(200);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    digitalWrite(<a class="code" href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>, LOW);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    delay(800);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="keywordtype">void</span> <a class="code" href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a>()</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// I&#39;m just gonna blink &#39;cause I have nothing left to do...</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    digitalWrite(<a class="code" href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>, HIGH);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    delay(200);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    digitalWrite(<a class="code" href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>, LOW);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    delay(800);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_user_settings_class_html_abf65ec0e11008a7071961cb3a7da3a05"><div class="ttname"><a href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">UserSettingsClass::getAntennaType</a></div><div class="ttdeci">WLanSelectAntenna_TypeDef getAntennaType()</div><div class="ttdoc">get Antenna Type selection for Particle devices</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00147">UserSettingsClass.h:147</a></div></div>
@@ -326,7 +317,7 @@ $(document).ready(function(){initNavTree('advanced_usage_8cpp_source.html','');}
 <div class="ttc" id="aclass_e_e_p_r_o_m___class_html"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div><div class="ttdoc">EEPROM Class.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00031">EEPROM_Class.h:31</a></div></div>
 <div class="ttc" id="aclass_user_settings_class_html_a163b4c22d607e626fab2ccc8d7e292ec"><div class="ttname"><a href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">UserSettingsClass::begin</a></div><div class="ttdeci">bool begin(uint16_t address)</div><div class="ttdoc">Initializer: Loads working copy of object from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8cpp_source.html#l00015">UserSettingsClass.cpp:15</a></div></div>
 <div class="ttc" id="aadvanced_usage_8cpp_html_ae7c73c4245fc9220fcd49afbe44c2a67"><div class="ttname"><a href="advanced_usage_8cpp.html#ae7c73c4245fc9220fcd49afbe44c2a67">logHandler</a></div><div class="ttdeci">SerialLogHandler logHandler(115200, LOG_LEVEL_ALL)</div><div class="ttdoc">Log handler.</div></div>
-<div class="ttc" id="aadvanced_usage_8cpp_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">loop</div><div class="ttdef"><b>Definition:</b> <a href="advanced_usage_8cpp_source.html#l00285">advancedUsage.cpp:285</a></div></div>
+<div class="ttc" id="aadvanced_usage_8cpp_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">loop</div><div class="ttdef"><b>Definition:</b> <a href="advanced_usage_8cpp_source.html#l00276">advancedUsage.cpp:276</a></div></div>
 <div class="ttc" id="a_user_settings_class_8h_html"><div class="ttname"><a href="_user_settings_class_8h.html">UserSettingsClass.h</a></div><div class="ttdoc">User Configurations Settings Class Header.</div></div>
 <div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3669112f8fca19628bf427a3e3575926"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">EEPROM_Class::begin</a></div><div class="ttdeci">bool begin(uint16_t address, OBJ &amp;object)</div><div class="ttdoc">Initialize the object and load data from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00069">EEPROM_Class.h:69</a></div></div>
 <div class="ttc" id="aclass_user_settings_class_html_a0b837491897a91e4c59091c43cebcccf"><div class="ttname"><a href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">UserSettingsClass::isDSTEnabled</a></div><div class="ttdeci">bool isDSTEnabled()</div><div class="ttdoc">Get Daylight Savings Time enable flag.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00138">UserSettingsClass.h:138</a></div></div>

@@ -153,15 +153,6 @@ void setup()
     // Create an EEPROM class instance to hold the object
     EEPROM_Class<UserCredentials> myEEPROM;
 
-    // // Define the EEPROM addresses for the data object images.
-    // // We will have two independant objects in EEPROM, each separately maintained.
-	
-	// // Relative address of the mySettings object in EEPROM
-    // #define mySettingsAddress 0
-
-	// // Relative address of the myCredentials object in EEPROM
-    // #define myCredentialsAddress mySettingsAddress + sizeof(mySettings) // Make sure to account for the location and size of the previous object(s)
-
     // Set following if() statement to true to invalidate objects to simulate first run
     if(false)
     {

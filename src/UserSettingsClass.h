@@ -68,7 +68,7 @@ struct SettingsObject
 /*********************************************************************************************************
  * @brief The UserSettings Class
  * 
- * This encapsulates a common user settings object, containing such details as user name, time settings, etc.
+ * This encapsulates a common user settings object, containing clock and Wifi seytings.
  * Primary working RAM object image is loaded from EEPROM on startup. Change to any item results in an updated
  * object being rewritten to EEPROM.
  * 
