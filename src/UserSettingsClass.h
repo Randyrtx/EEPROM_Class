@@ -2,8 +2,8 @@
  * @file UserSettingsClass.h
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief User Configurations Settings Class Header
- * @version 0.0.1
- * @date 2019-09-13
+ * @version 1.0.0
+ * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
  * 
