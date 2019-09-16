@@ -105,7 +105,7 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
     WiFi.selectAntenna(mySettings.getAntennaType());
 ```
 
-Refer to the provided [examples](tbd) for more details.
+Refer to the provided [examples](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples) for more details.
 
 ## Examples:
 

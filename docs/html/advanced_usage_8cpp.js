@@ -12,7 +12,7 @@ var advanced_usage_8cpp =
     [ "USER_NAME", "advanced_usage_8cpp.html#af55e8c51eb649983dc307ddf43a46ee6", null ],
     [ "USER_PASSWORD", "advanced_usage_8cpp.html#a198fd6abc61f7245c473dcb2752370e7", null ],
     [ "USER_TZ", "advanced_usage_8cpp.html#a37c6eadcbd1274474bc6dbbcba2d831d", null ],
-    [ "logHandler", "advanced_usage_8cpp.html#a27ddec8be76152ecfa02ad3f2200f450", null ],
+    [ "logHandler", "advanced_usage_8cpp.html#ae7c73c4245fc9220fcd49afbe44c2a67", null ],
     [ "loop", "advanced_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f", null ],
     [ "setup", "advanced_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d", null ]
 ];

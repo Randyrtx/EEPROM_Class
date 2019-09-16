@@ -9,7 +9,7 @@ var basic_usage_8cpp =
     [ "USER_DSTOFFSET", "basic_usage_8cpp.html#aac1b435af7c112d903be4bcd33b9a4a5", null ],
     [ "USER_HOSTNAME", "basic_usage_8cpp.html#a14f2d794fea2d9a8f06d3f19cd0d808d", null ],
     [ "USER_TZ", "basic_usage_8cpp.html#a37c6eadcbd1274474bc6dbbcba2d831d", null ],
-    [ "logHandler", "basic_usage_8cpp.html#a27ddec8be76152ecfa02ad3f2200f450", null ],
+    [ "logHandler", "basic_usage_8cpp.html#ae7c73c4245fc9220fcd49afbe44c2a67", null ],
     [ "loop", "basic_usage_8cpp.html#afe461d27b9c48d5921c00d521181f12f", null ],
     [ "setup", "basic_usage_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d", null ]
 ];
