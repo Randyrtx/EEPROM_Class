@@ -108,7 +108,6 @@ void UserSettingsClass::logUserData()
 
 bool UserSettingsClass::setHostName(String hostName)
 {
-    strcpy(_mySettings.hostName, hostName);
     // Range check:
     if (hostName.length() > (sizeof(_mySettings.hostName) - 1))
     {
