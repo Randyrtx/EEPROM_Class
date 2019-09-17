@@ -2,15 +2,17 @@
  * @file UserSettingsClass.h
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief User Configurations Settings Class Header
- * @version 1.0.0
+ * @version 1.0.1
  * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
  * 
  * 
- * | Date       | Change |
- * -----------------------------------------------------
- * | 2019-09-15 | Removed user name and password items |
+ * | Version | Date       | Change |
+ * ---------------------------------------------------------------
+ * |         | 2019-09-15 | Removed user name and password items |
+ * ---------------------------------------------------------------
+ * | 1.0.1   | 2019-09-16 | Corrected error in AdvancedUsage.cpp |
  * 
  */
 #pragma once

@@ -2,7 +2,7 @@
  * @file advancedUsage.cpp
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief 
- * @version 1.0.0
+ * @version 1.0.1
  * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
@@ -83,8 +83,7 @@ SerialLogHandler logHandler(115200, LOG_LEVEL_ERROR);
 #define mySettingsAddress 0
 
 //! Relative address of the myCredentials object in EEPROM
-#define myCredentialsAddress mySettingsAddress + sizeof(mySettings) // Make sure to account for the location and size of the previous object(s)
-
+#define myCredentialsAddress mySettingsAddress + sizeof(mySettings) + sizeof(uint16_t) // Make sure to account for the location and size of the previous object(s) and checksum
 
 
 /******************************************************************************
