@@ -6,6 +6,7 @@ var class_e_e_p_r_o_m___class =
     [ "_setChecksum", "class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725", null ],
     [ "_verifyChecksum", "class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe", null ],
     [ "begin", "class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926", null ],
+    [ "getSize", "class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289", null ],
     [ "readObject", "class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d", null ],
     [ "verifyChecksum", "class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6", null ],
     [ "writeObject", "class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958", null ],

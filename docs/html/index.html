@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">EEPROM_Class
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.0.2</span>
    </div>
    <div id="projectbrief">A simple class library for managing EEPROM-based data objects</div>
   </td>
@@ -92,20 +92,20 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This library implements classes for managing data objects stored in the emulated EEPROM of Particle devices.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 EEPROM_Class</h1>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> OBJ&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a> {}</div>
 </div><!-- fragment --><p> Implements the basic, low-level functions for storing and retrieving generic data objects in EEPROM. Integrity is maintained via a 16-bit checksum which is verifed before data is retrieved, and updated whenever the entries in the object are changed. May be used standalone for small data objects or used in derived classes for specialized data objects.</p>
 <p>Implemented as a template class so that objects of any type may be used.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 UserSettingsClass</h1>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code" href="class_user_settings_class.html">UserSettingsClass</a> : <span class="keyword">public</span> <a class="code" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a>&lt;SettingsObject&gt; {}</div>
 </div><!-- fragment --><p> Derives from the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> base class to implement a specialized data object containing clock settings and Wifi information not already provided by the system OS.</p>
 <p><a href="https://randyrtx.github.io/EEPROM_Class/">API Documentation</a></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Simple Object use with EEPROM_Class</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 User-defined data object (example)</h2>
 <div class="fragment"><div class="line"><span class="comment">// Define structure of the object</span></div>
 <div class="line"><span class="keyword">struct </span>UserCredentials</div>
@@ -125,19 +125,19 @@ User-defined data object (example)</h2>
 <div class="line"><span class="preprocessor">#define mySettingsAddress 0</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Initialize the data object with EEPROM image</span></div>
-<div class="line"><span class="keywordflow">if</span>(myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(<a class="code" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>, myCredentials))</div>
+<div class="line"><span class="keywordflow">if</span>(myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(myCredentialsAddress, myCredentials))</div>
 <div class="line">    <span class="comment">// Valid Image Loaded</span></div>
 <div class="line"><span class="keywordflow">else</span></div>
 <div class="line">    <span class="comment">// Checksum error, image not loaded</span></div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md9"></a>
 Updating the object</h2>
 <div class="fragment"><div class="line">strcpy(myCredentials.userName, <span class="stringliteral">&quot;NewUserName&quot;</span>);</div>
 <div class="line">strcpy(myCredentials.password, <span class="stringliteral">&quot;NewPassword&quot;</span>);</div>
 <div class="line">myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(myCredentials);</div>
 </div><!-- fragment --><p> Refer to the <a href="https://randyrtx.github.io/EEPROM_Class/">API Documentation</a> and <a href="https://github.com/Randyrtx/EEPROM_Class/tree/master/examples">Examples</a> for further details.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 UserSettingsClass  User Configuration Object</h1>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Data Object</h2>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="struct_settings_object.html">SettingsObject</a></div>
 <div class="line">{</div>
@@ -147,7 +147,7 @@ Data Object</h2>
 <div class="line">    <span class="keywordtype">char</span> <a class="code" href="struct_settings_object.html#a958181483bb7221d4978699bc70381f8">hostName</a>[32];</div>
 <div class="line">    WLanSelectAntenna_TypeDef <a class="code" href="struct_settings_object.html#a80273513c94783def5bbc0bd28e042c4">antennaType</a>;</div>
 <div class="line">};</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md12"></a>
 Class instantiation and startup</h2>
 <div class="fragment"><div class="line"><span class="comment">// User Settings Class Object</span></div>
 <div class="line"><a class="code" href="class_user_settings_class.html">UserSettingsClass</a> mySettings;</div>
@@ -156,7 +156,7 @@ Class instantiation and startup</h2>
 <div class="line"><span class="comment">//      where: 0 &lt;= address &lt;= EEPROM.length() - (sizeof(object) + sizeof(uint16_t))</span></div>
 <div class="line"><span class="preprocessor">#define mySettingsAddress 0</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span> (mySettings.<a class="code" href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">begin</a>(<a class="code" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>))</div>
+<div class="line"><span class="keywordflow">if</span> (mySettings.<a class="code" href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">begin</a>(mySettingsAddress))</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Valid Image Loaded</span></div>
 <div class="line">}</div>
@@ -164,7 +164,7 @@ Class instantiation and startup</h2>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Checksum error, image not loaded</span></div>
 <div class="line">}</div>
-</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md13"></a>
 Typical use:</h3>
 <div class="fragment"><div class="line">Time.zone(mySettings.<a class="code" href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">getTimeZone</a>()); <span class="comment">// Set time zone</span></div>
 <div class="line">Time.setDSTOffset(mySettings.<a class="code" href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">getDstOffset</a>()); <span class="comment">// Set DST offset</span></div>
@@ -179,36 +179,59 @@ Typical use:</h3>
 <div class="line"> </div>
 <div class="line">WiFi.setHostname(mySettings.<a class="code" href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">getHostName</a>());</div>
 <div class="line">WiFi.selectAntenna(mySettings.<a class="code" href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">getAntennaType</a>());</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
+Object Address Calculation for Multiple Data Objects</h1>
+<div class="fragment"><div class="line"><span class="comment">// Define desired start of used EEPROM for data objects</span></div>
+<div class="line"><span class="preprocessor">#define EEPROM_START_ADDRESS 0</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create an address variable to set starting address for each object</span></div>
+<div class="line"><span class="keywordtype">size_t</span> objectAddress = <a class="code" href="advanced_usage_8cpp.html#a96932befbe81496318633eab6e623adb">EEPROM_START_ADDRESS</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create first object</span></div>
+<div class="line"><a class="code" href="class_user_settings_class.html">UserSettingsClass</a> mySettingsObject;</div>
+<div class="line">mySettingsObject.<a class="code" href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">begin</a>(objectAddress);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// bump the address for next item</span></div>
+<div class="line">objectAddress += mySettings.<a class="code" href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">getSize</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create next object</span></div>
+<div class="line"><span class="keyword">struct </span>UserObject { ... };</div>
+<div class="line">UserObject myObject;</div>
+<div class="line"><a class="code" href="class_e_e_p_r_o_m___class.html">EEPROM_Class&lt;UserObject&gt;</a> myEEPROM;</div>
+<div class="line">myEEPROM.<a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(objectAddress, myObject);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// bump the address for next item</span></div>
+<div class="line">objectAddress += myObject.getSize();</div>
 </div><!-- fragment --><p>Refer to the provided <a href="https://github.com/Randyrtx/EEPROM_Class/tree/master/examples">examples</a> for more details.</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Examples:</h1>
 <p><a href="https://github.com/Randyrtx/EEPROM_Class/tree/master/examples/basicUsage">Basic Usage Example</a>: Demonstrates use of the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> for a small user-supplied data object.</p>
 <p><a href="https://github.com/Randyrtx/EEPROM_Class/tree/master/examples/advancedUsage">Advanced Usage Example</a>: Demonstrates use of the <a class="el" href="class_user_settings_class.html" title="The UserSettings Class.">UserSettingsClass</a> for common system settings.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 LICENSE</h1>
 <p>Copyright 2019 Randy E. Rainwater</p>
 <p>Licensed under the MIT License </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_user_settings_class_html_abf65ec0e11008a7071961cb3a7da3a05"><div class="ttname"><a href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">UserSettingsClass::getAntennaType</a></div><div class="ttdeci">WLanSelectAntenna_TypeDef getAntennaType()</div><div class="ttdoc">get Antenna Type selection for Particle devices</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00147">UserSettingsClass.h:147</a></div></div>
-<div class="ttc" id="aclass_user_settings_class_html_a2d4d64e54a42c8d695dcf1b5bda82124"><div class="ttname"><a href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">UserSettingsClass::getHostName</a></div><div class="ttdeci">char * getHostName()</div><div class="ttdoc">Get Wifi Hostname.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00143">UserSettingsClass.h:143</a></div></div>
-<div class="ttc" id="aclass_user_settings_class_html"><div class="ttname"><a href="class_user_settings_class.html">UserSettingsClass</a></div><div class="ttdoc">The UserSettings Class.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00078">UserSettingsClass.h:78</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a6458403b6583493802013163b389c958"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">EEPROM_Class::writeObject</a></div><div class="ttdeci">void writeObject(OBJ &amp;object)</div><div class="ttdoc">Write object to EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00085">EEPROM_Class.h:85</a></div></div>
-<div class="ttc" id="aadvanced_usage_8cpp_html_aee908792e407d8f93a63f419cefbffd8"><div class="ttname"><a href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a></div><div class="ttdeci">#define myCredentialsAddress</div><div class="ttdoc">Relative address of the myCredentials object in EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="advanced_usage_8cpp_source.html#l00084">advancedUsage.cpp:84</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div><div class="ttdoc">EEPROM Class.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00031">EEPROM_Class.h:31</a></div></div>
-<div class="ttc" id="astruct_settings_object_html_abb5ea8be7eb88601ecb4b161e0a80305"><div class="ttname"><a href="struct_settings_object.html#abb5ea8be7eb88601ecb4b161e0a80305">SettingsObject::timeZone</a></div><div class="ttdeci">int8_t timeZone</div><div class="ttdoc">Local Time Zone.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00048">UserSettingsClass.h:48</a></div></div>
-<div class="ttc" id="astruct_settings_object_html"><div class="ttname"><a href="struct_settings_object.html">SettingsObject</a></div><div class="ttdoc">Data Object Structure.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00042">UserSettingsClass.h:42</a></div></div>
+<div class="ttc" id="aclass_user_settings_class_html_abf65ec0e11008a7071961cb3a7da3a05"><div class="ttname"><a href="class_user_settings_class.html#abf65ec0e11008a7071961cb3a7da3a05">UserSettingsClass::getAntennaType</a></div><div class="ttdeci">WLanSelectAntenna_TypeDef getAntennaType()</div><div class="ttdoc">get Antenna Type selection for Particle devices</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00149">UserSettingsClass.h:149</a></div></div>
+<div class="ttc" id="aclass_user_settings_class_html_a2d4d64e54a42c8d695dcf1b5bda82124"><div class="ttname"><a href="class_user_settings_class.html#a2d4d64e54a42c8d695dcf1b5bda82124">UserSettingsClass::getHostName</a></div><div class="ttdeci">char * getHostName()</div><div class="ttdoc">Get Wifi Hostname.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00145">UserSettingsClass.h:145</a></div></div>
+<div class="ttc" id="aclass_user_settings_class_html"><div class="ttname"><a href="class_user_settings_class.html">UserSettingsClass</a></div><div class="ttdoc">The UserSettings Class.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00080">UserSettingsClass.h:80</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a6458403b6583493802013163b389c958"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">EEPROM_Class::writeObject</a></div><div class="ttdeci">void writeObject(OBJ &amp;object)</div><div class="ttdoc">Write object to EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00091">EEPROM_Class.h:91</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div><div class="ttdoc">EEPROM Class.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00037">EEPROM_Class.h:37</a></div></div>
+<div class="ttc" id="astruct_settings_object_html_abb5ea8be7eb88601ecb4b161e0a80305"><div class="ttname"><a href="struct_settings_object.html#abb5ea8be7eb88601ecb4b161e0a80305">SettingsObject::timeZone</a></div><div class="ttdeci">int8_t timeZone</div><div class="ttdoc">Local Time Zone.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00050">UserSettingsClass.h:50</a></div></div>
+<div class="ttc" id="astruct_settings_object_html"><div class="ttname"><a href="struct_settings_object.html">SettingsObject</a></div><div class="ttdoc">Data Object Structure.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00044">UserSettingsClass.h:44</a></div></div>
 <div class="ttc" id="aclass_user_settings_class_html_a163b4c22d607e626fab2ccc8d7e292ec"><div class="ttname"><a href="class_user_settings_class.html#a163b4c22d607e626fab2ccc8d7e292ec">UserSettingsClass::begin</a></div><div class="ttdeci">bool begin(uint16_t address)</div><div class="ttdoc">Initializer: Loads working copy of object from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8cpp_source.html#l00015">UserSettingsClass.cpp:15</a></div></div>
-<div class="ttc" id="astruct_settings_object_html_a8e8389d18c0d065eebc2230fa47b8a01"><div class="ttname"><a href="struct_settings_object.html#a8e8389d18c0d065eebc2230fa47b8a01">SettingsObject::dstOffset</a></div><div class="ttdeci">float dstOffset</div><div class="ttdoc">Daylight Savings Time Offset Offset in hours from standard time when daylight savings time is in effe...</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00052">UserSettingsClass.h:52</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3669112f8fca19628bf427a3e3575926"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">EEPROM_Class::begin</a></div><div class="ttdeci">bool begin(uint16_t address, OBJ &amp;object)</div><div class="ttdoc">Initialize the object and load data from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00069">EEPROM_Class.h:69</a></div></div>
-<div class="ttc" id="aclass_user_settings_class_html_a0b837491897a91e4c59091c43cebcccf"><div class="ttname"><a href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">UserSettingsClass::isDSTEnabled</a></div><div class="ttdeci">bool isDSTEnabled()</div><div class="ttdoc">Get Daylight Savings Time enable flag.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00138">UserSettingsClass.h:138</a></div></div>
-<div class="ttc" id="astruct_settings_object_html_a868a7380d72c873360deb384c75af119"><div class="ttname"><a href="struct_settings_object.html#a868a7380d72c873360deb384c75af119">SettingsObject::dstEnabled</a></div><div class="ttdeci">bool dstEnabled</div><div class="ttdoc">Daylight Savings Time enable flag True = enabled, False = disabled.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00056">UserSettingsClass.h:56</a></div></div>
-<div class="ttc" id="aadvanced_usage_8cpp_html_aa87b7c1c79746a7fa3546adb2e0ace4f"><div class="ttname"><a href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a></div><div class="ttdeci">#define mySettingsAddress</div><div class="ttdoc">Relative address of the mySettings object in EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="advanced_usage_8cpp_source.html#l00081">advancedUsage.cpp:81</a></div></div>
-<div class="ttc" id="aclass_user_settings_class_html_ad2fc539a3d3ac35df61872b04b2e8509"><div class="ttname"><a href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">UserSettingsClass::getTimeZone</a></div><div class="ttdeci">int8_t getTimeZone()</div><div class="ttdoc">getters</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00128">UserSettingsClass.h:128</a></div></div>
-<div class="ttc" id="astruct_settings_object_html_a958181483bb7221d4978699bc70381f8"><div class="ttname"><a href="struct_settings_object.html#a958181483bb7221d4978699bc70381f8">SettingsObject::hostName</a></div><div class="ttdeci">char hostName[32]</div><div class="ttdoc">WiFi Hostname Null-terminated, 31 Character limit.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00060">UserSettingsClass.h:60</a></div></div>
-<div class="ttc" id="aclass_user_settings_class_html_a7c6f54ac6f0fe9033d6f2d53b88820f9"><div class="ttname"><a href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">UserSettingsClass::getDstOffset</a></div><div class="ttdeci">float getDstOffset()</div><div class="ttdoc">Get Daylight Savings Time offset.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00133">UserSettingsClass.h:133</a></div></div>
-<div class="ttc" id="astruct_settings_object_html_a80273513c94783def5bbc0bd28e042c4"><div class="ttname"><a href="struct_settings_object.html#a80273513c94783def5bbc0bd28e042c4">SettingsObject::antennaType</a></div><div class="ttdeci">WLanSelectAntenna_TypeDef antennaType</div><div class="ttdoc">Wifi Antenna Type Selection For Particle Devices, may be Internal(ANT_INTERNAL), External(ANT_EXTERNA...</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00064">UserSettingsClass.h:64</a></div></div>
+<div class="ttc" id="astruct_settings_object_html_a8e8389d18c0d065eebc2230fa47b8a01"><div class="ttname"><a href="struct_settings_object.html#a8e8389d18c0d065eebc2230fa47b8a01">SettingsObject::dstOffset</a></div><div class="ttdeci">float dstOffset</div><div class="ttdoc">Daylight Savings Time Offset Offset in hours from standard time when daylight savings time is in effe...</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00054">UserSettingsClass.h:54</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a5e785c7e335b9dcb3d7744365bc7c289"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">EEPROM_Class::getSize</a></div><div class="ttdeci">size_t getSize()</div><div class="ttdoc">Get the Size of the object.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00135">EEPROM_Class.h:135</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3669112f8fca19628bf427a3e3575926"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">EEPROM_Class::begin</a></div><div class="ttdeci">bool begin(uint16_t address, OBJ &amp;object)</div><div class="ttdoc">Initialize the object and load data from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00075">EEPROM_Class.h:75</a></div></div>
+<div class="ttc" id="aclass_user_settings_class_html_a0b837491897a91e4c59091c43cebcccf"><div class="ttname"><a href="class_user_settings_class.html#a0b837491897a91e4c59091c43cebcccf">UserSettingsClass::isDSTEnabled</a></div><div class="ttdeci">bool isDSTEnabled()</div><div class="ttdoc">Get Daylight Savings Time enable flag.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00140">UserSettingsClass.h:140</a></div></div>
+<div class="ttc" id="aadvanced_usage_8cpp_html_a96932befbe81496318633eab6e623adb"><div class="ttname"><a href="advanced_usage_8cpp.html#a96932befbe81496318633eab6e623adb">EEPROM_START_ADDRESS</a></div><div class="ttdeci">#define EEPROM_START_ADDRESS</div><div class="ttdoc">Desired start address of EEPROM used for data objects.</div><div class="ttdef"><b>Definition:</b> <a href="advanced_usage_8cpp_source.html#l00085">advancedUsage.cpp:85</a></div></div>
+<div class="ttc" id="astruct_settings_object_html_a868a7380d72c873360deb384c75af119"><div class="ttname"><a href="struct_settings_object.html#a868a7380d72c873360deb384c75af119">SettingsObject::dstEnabled</a></div><div class="ttdeci">bool dstEnabled</div><div class="ttdoc">Daylight Savings Time enable flag True = enabled, False = disabled.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00058">UserSettingsClass.h:58</a></div></div>
+<div class="ttc" id="aclass_user_settings_class_html_ad2fc539a3d3ac35df61872b04b2e8509"><div class="ttname"><a href="class_user_settings_class.html#ad2fc539a3d3ac35df61872b04b2e8509">UserSettingsClass::getTimeZone</a></div><div class="ttdeci">int8_t getTimeZone()</div><div class="ttdoc">getters</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00130">UserSettingsClass.h:130</a></div></div>
+<div class="ttc" id="astruct_settings_object_html_a958181483bb7221d4978699bc70381f8"><div class="ttname"><a href="struct_settings_object.html#a958181483bb7221d4978699bc70381f8">SettingsObject::hostName</a></div><div class="ttdeci">char hostName[32]</div><div class="ttdoc">WiFi Hostname Null-terminated, 31 Character limit.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00062">UserSettingsClass.h:62</a></div></div>
+<div class="ttc" id="aclass_user_settings_class_html_a7c6f54ac6f0fe9033d6f2d53b88820f9"><div class="ttname"><a href="class_user_settings_class.html#a7c6f54ac6f0fe9033d6f2d53b88820f9">UserSettingsClass::getDstOffset</a></div><div class="ttdeci">float getDstOffset()</div><div class="ttdoc">Get Daylight Savings Time offset.</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00135">UserSettingsClass.h:135</a></div></div>
+<div class="ttc" id="astruct_settings_object_html_a80273513c94783def5bbc0bd28e042c4"><div class="ttname"><a href="struct_settings_object.html#a80273513c94783def5bbc0bd28e042c4">SettingsObject::antennaType</a></div><div class="ttdeci">WLanSelectAntenna_TypeDef antennaType</div><div class="ttdoc">Wifi Antenna Type Selection For Particle Devices, may be Internal(ANT_INTERNAL), External(ANT_EXTERNA...</div><div class="ttdef"><b>Definition:</b> <a href="_user_settings_class_8h_source.html#l00066">UserSettingsClass.h:66</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

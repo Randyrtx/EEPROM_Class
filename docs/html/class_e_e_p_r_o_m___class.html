@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">EEPROM_Class
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.0.2</span>
    </div>
    <div id="projectbrief">A simple class library for managing EEPROM-based data objects</div>
   </td>
@@ -123,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f3b18e4d02a27bb1212d08773b92df6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">verifyChecksum</a> ()</td></tr>
 <tr class="memdesc:a6f3b18e4d02a27bb1212d08773b92df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify Checksum (Public)  <a href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">More...</a><br /></td></tr>
 <tr class="separator:a6f3b18e4d02a27bb1212d08773b92df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e785c7e335b9dcb3d7744365bc7c289"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">getSize</a> ()</td></tr>
+<tr class="memdesc:a5e785c7e335b9dcb3d7744365bc7c289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Size of the object.  <a href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">More...</a><br /></td></tr>
+<tr class="separator:a5e785c7e335b9dcb3d7744365bc7c289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -169,7 +172,7 @@ class EEPROM_Class&lt; OBJ &gt;</h3>
 <p>The EEPROM image is copied to the data object on startup using the Class init() function. Thereafter, any change to individual items in the data object result in the full object being transferred to EEPROM via EEPROM.put(), and a new checksum is calculated and stored as well.</p>
 <p>The class is intended to be used as the base class for deriving more data-specific classes. </p>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00031">31</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00037">37</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af59d1cd99b48095193a2f8fb4107b458"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af59d1cd99b48095193a2f8fb4107b458">&#9670;&nbsp;</a></span>EEPROM_Class()</h2>
@@ -198,7 +201,7 @@ template&lt;class OBJ&gt; </div>
 
 <p>Construct a new eeprom class object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00038">38</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00044">44</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +232,7 @@ template&lt;class OBJ&gt; </div>
 
 <p>Destroy the eeprom class object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00047">47</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00053">53</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -262,7 +265,7 @@ template&lt;class OBJ&gt; </div>
 <p>calculate checksum of the data block </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t calculated checksum </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00203">203</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00217">217</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -294,7 +297,7 @@ template&lt;class OBJ&gt; </div>
 <p>Private functions. </p>
 <p>Calculates and stores checksum in EEPROM </p>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00183">183</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00197">197</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -328,7 +331,7 @@ template&lt;class OBJ&gt; </div>
 <dd>
 false Checksum error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00152">152</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00166">166</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -380,7 +383,39 @@ template&lt;class OBJ&gt; </div>
 <dd>
 false: EEPROM image invalid </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00069">69</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00075">75</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e785c7e335b9dcb3d7744365bc7c289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e785c7e335b9dcb3d7744365bc7c289">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class OBJ&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a>&lt; OBJ &gt;::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Size of the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t object size </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00135">135</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -421,7 +456,7 @@ template&lt;class OBJ&gt; </div>
 <dd>
 false Checksum invalid, object not loaded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00098">98</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00104">104</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -455,7 +490,7 @@ template&lt;class OBJ&gt; </div>
 <dd>
 false Checksum invalid </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00119">119</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00125">125</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -493,7 +528,7 @@ template&lt;class OBJ&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00085">85</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00091">91</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -523,7 +558,7 @@ template&lt;class OBJ&gt; </div>
 <p>Address assigned to the checksum value in EEPROM. </p>
 <p>Checksum is placed at the beginning of the memory block occupied by the data object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00136">136</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00150">150</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>
@@ -552,7 +587,7 @@ template&lt;class OBJ&gt; </div>
 <p>Private members. </p>
 <p>Address assigned to the data object in EEPROM. </p>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00130">130</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m___class_8h_source.html#l00144">144</a> of file <a class="el" href="_e_e_p_r_o_m___class_8h_source.html">EEPROM_Class.h</a>.</p>
 
 </div>
 </div>

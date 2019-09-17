@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['myaddress_117',['myAddress',['../basic_usage_8cpp.html#a5ef0f42274f06308612e31501d6c0f8f',1,'basicUsage.cpp']]],
-  ['mycredentialsaddress_118',['myCredentialsAddress',['../advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8',1,'advancedUsage.cpp']]],
-  ['mysettingsaddress_119',['mySettingsAddress',['../advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f',1,'advancedUsage.cpp']]]
+  ['ledmain_117',['ledMain',['../advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf',1,'ledMain():&#160;advancedUsage.cpp'],['../basic_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf',1,'ledMain():&#160;basicUsage.cpp']]],
+  ['log_5frtx_118',['LOG_RTX',['../advanced_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09',1,'LOG_RTX():&#160;advancedUsage.cpp'],['../basic_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09',1,'LOG_RTX():&#160;basicUsage.cpp']]]
 ];

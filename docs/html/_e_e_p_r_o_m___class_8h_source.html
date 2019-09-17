@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">EEPROM_Class
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.0.2</span>
    </div>
    <div id="projectbrief">A simple class library for managing EEPROM-based data objects</div>
   </td>
@@ -92,148 +92,152 @@ $(document).ready(function(){initNavTree('_e_e_p_r_o_m___class_8h_source.html','
 </div><!--header-->
 <div class="contents">
 <a href="_e_e_p_r_o_m___class_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;Particle.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> OBJ&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#af59d1cd99b48095193a2f8fb4107b458">   38</a></span>&#160;    <a class="code" href="class_e_e_p_r_o_m___class.html#af59d1cd99b48095193a2f8fb4107b458">EEPROM_Class</a>()</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Log.trace(<span class="stringliteral">&quot;in EEPROM_Class Constructor.&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a816a8a8d38726a9856818cb5b2e4d7e1">   47</a></span>&#160;    <a class="code" href="class_e_e_p_r_o_m___class.html#a816a8a8d38726a9856818cb5b2e4d7e1">~EEPROM_Class</a>()</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Log.trace(<span class="stringliteral">&quot;in EEPROM_Class Destructor.&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// EEPROM_Class(uint16_t address, OBJ &amp;object)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// {</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//     Log.trace(&quot;in EEPROM_Class Constructor.&quot;);</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//  _adr_checksum = address;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//     _adr_object = _adr_checksum + sizeof(_checksum);</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//  _eepromSize = sizeof(object) + sizeof(_checksum);</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//  Log.trace(&quot;_adr_checksum = %d, _adr_object = %d, _eepromSize = %d&quot;, _adr_checksum, _adr_object, _eepromSize);</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// }</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">   69</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(uint16_t address, OBJ &amp;<span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> = address;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a> = <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> + <span class="keyword">sizeof</span>(<a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a> = <span class="keyword">sizeof</span>(object) + <span class="keyword">sizeof</span>(<a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        EEPROM.get(<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        Log.trace(<span class="stringliteral">&quot;_adr_checksum: %d, _adr_object: %d, _eepromSize: %d, checksum: 0x%04X&quot;</span>, <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">readObject</a>(<span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">   85</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(OBJ &amp;<span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        EEPROM.put(<a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>, <span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725">_setChecksum</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">   98</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">readObject</a>(OBJ &amp;<span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">_verifyChecksum</a>())</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            EEPROM.get(<a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>, <span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            Log.trace(<span class="stringliteral">&quot;EEPROM object image Loaded.&quot;</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Particle.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> OBJ&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#af59d1cd99b48095193a2f8fb4107b458">   44</a></span>&#160;    <a class="code" href="class_e_e_p_r_o_m___class.html#af59d1cd99b48095193a2f8fb4107b458">EEPROM_Class</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Log.trace(<span class="stringliteral">&quot;in EEPROM_Class Constructor.&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a816a8a8d38726a9856818cb5b2e4d7e1">   53</a></span>&#160;    <a class="code" href="class_e_e_p_r_o_m___class.html#a816a8a8d38726a9856818cb5b2e4d7e1">~EEPROM_Class</a>()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        Log.trace(<span class="stringliteral">&quot;in EEPROM_Class Destructor.&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// EEPROM_Class(uint16_t address, OBJ &amp;object)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// {</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//     Log.trace(&quot;in EEPROM_Class Constructor.&quot;);</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//  _adr_checksum = address;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//     _adr_object = _adr_checksum + sizeof(_checksum);</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//  _eepromSize = sizeof(object) + sizeof(_checksum);</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//  Log.trace(&quot;_adr_checksum = %d, _adr_object = %d, _eepromSize = %d&quot;, _adr_checksum, _adr_object, _eepromSize);</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// }</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">   75</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">begin</a>(uint16_t address, OBJ &amp;<span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> = address;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a> = <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> + <span class="keyword">sizeof</span>(<a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a> = <span class="keyword">sizeof</span>(object) + <span class="keyword">sizeof</span>(<a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        EEPROM.get(<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        Log.trace(<span class="stringliteral">&quot;_adr_checksum: %d, _adr_object: %d, _eepromSize: %d, checksum: 0x%04X&quot;</span>, <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>, <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">readObject</a>(<span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">writeObject</a>(OBJ &amp;<span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        EEPROM.put(<a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>, <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725">_setChecksum</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">  104</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">readObject</a>(OBJ &amp;<span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">_verifyChecksum</a>())</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            Log.error(<span class="stringliteral">&quot;EEPROM object image invalid.&quot;</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">  119</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">verifyChecksum</a>()</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">_verifyChecksum</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    uint16_t <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            EEPROM.get(<a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>, <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            Log.trace(<span class="stringliteral">&quot;EEPROM object image Loaded.&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            Log.error(<span class="stringliteral">&quot;EEPROM object image invalid.&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">  125</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">verifyChecksum</a>()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">_verifyChecksum</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">  135</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">getSize</a>() { <span class="keywordflow">return</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">_verifyChecksum</a>()</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        uint16_t temp;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        uint16_t checkSum;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">// Retrieve stored checksum value</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        EEPROM.get(<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, checkSum);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    uint16_t <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        temp = <a class="code" href="class_e_e_p_r_o_m___class.html#a2e36ef90a493b6b1dfeaccf985528ab0">_calcChecksum</a>();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        Log.trace(<span class="stringliteral">&quot;Stored Checksum: 0x%04X, Calculated: 0x%04X&quot;</span>, checkSum, temp);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (checkSum == temp)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            Log.info(<span class="stringliteral">&quot;EEPROM User Settings Checksum valid.&quot;</span>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            Log.error(<span class="stringliteral">&quot;EEPROM User Settings Checksum invalid.&quot;</span>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">_verifyChecksum</a>()</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        uint16_t temp;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        uint16_t checkSum;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">// Retrieve stored checksum value</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        EEPROM.get(<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, checkSum);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        temp = <a class="code" href="class_e_e_p_r_o_m___class.html#a2e36ef90a493b6b1dfeaccf985528ab0">_calcChecksum</a>();</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725">_setChecksum</a>()</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        uint16_t temp = 0;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>; i &lt; (<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> + <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>); i++)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            temp += EEPROM.read(i);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        EEPROM.put(<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, temp);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a> = temp;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        Log.trace(<span class="stringliteral">&quot;EEPROM Checksum Updated: 0x%04X&quot;</span>, temp);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    uint16_t <a class="code" href="class_e_e_p_r_o_m___class.html#a2e36ef90a493b6b1dfeaccf985528ab0">_calcChecksum</a>()</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        uint16_t temp = 0;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">// Compute Checksum over the full EEPROM Space</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>; i &lt; (<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> + <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>); i++)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            temp += EEPROM.read(i);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> temp;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;};</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        Log.trace(<span class="stringliteral">&quot;Stored Checksum: 0x%04X, Calculated: 0x%04X&quot;</span>, checkSum, temp);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span> (checkSum == temp)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            Log.info(<span class="stringliteral">&quot;EEPROM User Settings Checksum valid.&quot;</span>);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            Log.error(<span class="stringliteral">&quot;EEPROM User Settings Checksum invalid.&quot;</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725">_setChecksum</a>()</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        uint16_t temp = 0;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>; i &lt; (<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> + <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>); i++)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            temp += EEPROM.read(i);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        EEPROM.put(<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a>, temp);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">_checksum</a> = temp;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        Log.trace(<span class="stringliteral">&quot;EEPROM Checksum Updated: 0x%04X&quot;</span>, temp);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    uint16_t <a class="code" href="class_e_e_p_r_o_m___class.html#a2e36ef90a493b6b1dfeaccf985528ab0">_calcChecksum</a>()</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        uint16_t temp = 0;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// Compute Checksum over the full EEPROM Space</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = <a class="code" href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">_adr_object</a>; i &lt; (<a class="code" href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">_adr_checksum</a> + <a class="code" href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">_eepromSize</a>); i++)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            temp += EEPROM.read(i);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a236b2411b5bd1d97cf6c9c39260df725"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725">EEPROM_Class::_setChecksum</a></div><div class="ttdeci">void _setChecksum()</div><div class="ttdoc">Private functions.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00183">EEPROM_Class.h:183</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_af59d1cd99b48095193a2f8fb4107b458"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#af59d1cd99b48095193a2f8fb4107b458">EEPROM_Class::EEPROM_Class</a></div><div class="ttdeci">EEPROM_Class()</div><div class="ttdoc">Construct a new eeprom class object.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00038">EEPROM_Class.h:38</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a6458403b6583493802013163b389c958"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">EEPROM_Class::writeObject</a></div><div class="ttdeci">void writeObject(OBJ &amp;object)</div><div class="ttdoc">Write object to EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00085">EEPROM_Class.h:85</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a816a8a8d38726a9856818cb5b2e4d7e1"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a816a8a8d38726a9856818cb5b2e4d7e1">EEPROM_Class::~EEPROM_Class</a></div><div class="ttdeci">~EEPROM_Class()</div><div class="ttdoc">Destroy the eeprom class object.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00047">EEPROM_Class.h:47</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div><div class="ttdoc">EEPROM Class.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00031">EEPROM_Class.h:31</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a0f7b12dadb085d8a8a6327fd56cedae4"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">EEPROM_Class::_eepromSize</a></div><div class="ttdeci">size_t _eepromSize</div><div class="ttdoc">Total memory size of the data object (bytes)</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00140">EEPROM_Class.h:140</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a42afdc86d7a6af5aeb675750f980469d"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">EEPROM_Class::readObject</a></div><div class="ttdeci">bool readObject(OBJ &amp;object)</div><div class="ttdoc">Read the object from EEPROM if checksum valid.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00098">EEPROM_Class.h:98</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_ada2d2ec11837fdb7f7eff9e1bcf2172f"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">EEPROM_Class::_adr_checksum</a></div><div class="ttdeci">size_t _adr_checksum</div><div class="ttdoc">Address assigned to the checksum value in EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00136">EEPROM_Class.h:136</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a919bd9eb09ca810f51b9d0ce3fbde5fe"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">EEPROM_Class::_verifyChecksum</a></div><div class="ttdeci">bool _verifyChecksum()</div><div class="ttdoc">Verifies checksum stored for the data block (Private)</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00152">EEPROM_Class.h:152</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3669112f8fca19628bf427a3e3575926"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">EEPROM_Class::begin</a></div><div class="ttdeci">bool begin(uint16_t address, OBJ &amp;object)</div><div class="ttdoc">Initialize the object and load data from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00069">EEPROM_Class.h:69</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a6f3b18e4d02a27bb1212d08773b92df6"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">EEPROM_Class::verifyChecksum</a></div><div class="ttdeci">bool verifyChecksum()</div><div class="ttdoc">Verify Checksum (Public)</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00119">EEPROM_Class.h:119</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a2e36ef90a493b6b1dfeaccf985528ab0"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a2e36ef90a493b6b1dfeaccf985528ab0">EEPROM_Class::_calcChecksum</a></div><div class="ttdeci">uint16_t _calcChecksum()</div><div class="ttdoc">calculate checksum of the data block</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00203">EEPROM_Class.h:203</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3124be8cb8110041bf8407de4cd7f6c5"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">EEPROM_Class::_adr_object</a></div><div class="ttdeci">int _adr_object</div><div class="ttdoc">Private members.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00130">EEPROM_Class.h:130</a></div></div>
-<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_aba6e12a31e7af31c4a9bf9f560469c07"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">EEPROM_Class::_checksum</a></div><div class="ttdeci">uint16_t _checksum</div><div class="ttdoc">16-bit checksum of EEPROM object image</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00144">EEPROM_Class.h:144</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a236b2411b5bd1d97cf6c9c39260df725"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a236b2411b5bd1d97cf6c9c39260df725">EEPROM_Class::_setChecksum</a></div><div class="ttdeci">void _setChecksum()</div><div class="ttdoc">Private functions.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00197">EEPROM_Class.h:197</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_af59d1cd99b48095193a2f8fb4107b458"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#af59d1cd99b48095193a2f8fb4107b458">EEPROM_Class::EEPROM_Class</a></div><div class="ttdeci">EEPROM_Class()</div><div class="ttdoc">Construct a new eeprom class object.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00044">EEPROM_Class.h:44</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a6458403b6583493802013163b389c958"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a6458403b6583493802013163b389c958">EEPROM_Class::writeObject</a></div><div class="ttdeci">void writeObject(OBJ &amp;object)</div><div class="ttdoc">Write object to EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00091">EEPROM_Class.h:91</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a816a8a8d38726a9856818cb5b2e4d7e1"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a816a8a8d38726a9856818cb5b2e4d7e1">EEPROM_Class::~EEPROM_Class</a></div><div class="ttdeci">~EEPROM_Class()</div><div class="ttdoc">Destroy the eeprom class object.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00053">EEPROM_Class.h:53</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html">EEPROM_Class</a></div><div class="ttdoc">EEPROM Class.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00037">EEPROM_Class.h:37</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a0f7b12dadb085d8a8a6327fd56cedae4"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a0f7b12dadb085d8a8a6327fd56cedae4">EEPROM_Class::_eepromSize</a></div><div class="ttdeci">size_t _eepromSize</div><div class="ttdoc">Total memory size of the data object (bytes)</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00154">EEPROM_Class.h:154</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a42afdc86d7a6af5aeb675750f980469d"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a42afdc86d7a6af5aeb675750f980469d">EEPROM_Class::readObject</a></div><div class="ttdeci">bool readObject(OBJ &amp;object)</div><div class="ttdoc">Read the object from EEPROM if checksum valid.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00104">EEPROM_Class.h:104</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a5e785c7e335b9dcb3d7744365bc7c289"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a5e785c7e335b9dcb3d7744365bc7c289">EEPROM_Class::getSize</a></div><div class="ttdeci">size_t getSize()</div><div class="ttdoc">Get the Size of the object.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00135">EEPROM_Class.h:135</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_ada2d2ec11837fdb7f7eff9e1bcf2172f"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#ada2d2ec11837fdb7f7eff9e1bcf2172f">EEPROM_Class::_adr_checksum</a></div><div class="ttdeci">size_t _adr_checksum</div><div class="ttdoc">Address assigned to the checksum value in EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00150">EEPROM_Class.h:150</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a919bd9eb09ca810f51b9d0ce3fbde5fe"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a919bd9eb09ca810f51b9d0ce3fbde5fe">EEPROM_Class::_verifyChecksum</a></div><div class="ttdeci">bool _verifyChecksum()</div><div class="ttdoc">Verifies checksum stored for the data block (Private)</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00166">EEPROM_Class.h:166</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3669112f8fca19628bf427a3e3575926"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3669112f8fca19628bf427a3e3575926">EEPROM_Class::begin</a></div><div class="ttdeci">bool begin(uint16_t address, OBJ &amp;object)</div><div class="ttdoc">Initialize the object and load data from EEPROM.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00075">EEPROM_Class.h:75</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a6f3b18e4d02a27bb1212d08773b92df6"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a6f3b18e4d02a27bb1212d08773b92df6">EEPROM_Class::verifyChecksum</a></div><div class="ttdeci">bool verifyChecksum()</div><div class="ttdoc">Verify Checksum (Public)</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00125">EEPROM_Class.h:125</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a2e36ef90a493b6b1dfeaccf985528ab0"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a2e36ef90a493b6b1dfeaccf985528ab0">EEPROM_Class::_calcChecksum</a></div><div class="ttdeci">uint16_t _calcChecksum()</div><div class="ttdoc">calculate checksum of the data block</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00217">EEPROM_Class.h:217</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_a3124be8cb8110041bf8407de4cd7f6c5"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#a3124be8cb8110041bf8407de4cd7f6c5">EEPROM_Class::_adr_object</a></div><div class="ttdeci">int _adr_object</div><div class="ttdoc">Private members.</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00144">EEPROM_Class.h:144</a></div></div>
+<div class="ttc" id="aclass_e_e_p_r_o_m___class_html_aba6e12a31e7af31c4a9bf9f560469c07"><div class="ttname"><a href="class_e_e_p_r_o_m___class.html#aba6e12a31e7af31c4a9bf9f560469c07">EEPROM_Class::_checksum</a></div><div class="ttdeci">uint16_t _checksum</div><div class="ttdoc">16-bit checksum of EEPROM object image</div><div class="ttdef"><b>Definition:</b> <a href="_e_e_p_r_o_m___class_8h_source.html#l00158">EEPROM_Class.h:158</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

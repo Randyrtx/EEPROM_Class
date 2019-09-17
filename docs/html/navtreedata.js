@@ -24,20 +24,21 @@ var NAVTREE =
 [
   [ "EEPROM_Class", "index.html", [
     [ "EEPROM_Class Library for Particle", "index.html", [
-      [ "EEPROM_Class", "index.html#autotoc_md2", null ],
-      [ "UserSettingsClass", "index.html#autotoc_md3", null ],
-      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md4", [
-        [ "User-defined data object (example)", "index.html#autotoc_md5", null ],
-        [ "Updating the object", "index.html#autotoc_md6", null ]
+      [ "EEPROM_Class", "index.html#autotoc_md5", null ],
+      [ "UserSettingsClass", "index.html#autotoc_md6", null ],
+      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md7", [
+        [ "User-defined data object (example)", "index.html#autotoc_md8", null ],
+        [ "Updating the object", "index.html#autotoc_md9", null ]
       ] ],
-      [ "UserSettingsClass  User Configuration Object", "index.html#autotoc_md7", [
-        [ "Data Object", "index.html#autotoc_md8", null ],
-        [ "Class instantiation and startup", "index.html#autotoc_md9", [
-          [ "Typical use:", "index.html#autotoc_md10", null ]
+      [ "UserSettingsClass  User Configuration Object", "index.html#autotoc_md10", [
+        [ "Data Object", "index.html#autotoc_md11", null ],
+        [ "Class instantiation and startup", "index.html#autotoc_md12", [
+          [ "Typical use:", "index.html#autotoc_md13", null ]
         ] ]
       ] ],
-      [ "Examples:", "index.html#autotoc_md11", null ],
-      [ "LICENSE", "index.html#autotoc_md12", null ]
+      [ "Object Address Calculation for Multiple Data Objects", "index.html#autotoc_md14", null ],
+      [ "Examples:", "index.html#autotoc_md15", null ],
+      [ "LICENSE", "index.html#autotoc_md16", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

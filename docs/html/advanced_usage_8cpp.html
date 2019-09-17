@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">EEPROM_Class
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.0.2</span>
    </div>
    <div id="projectbrief">A simple class library for managing EEPROM-based data objects</div>
   </td>
@@ -135,14 +135,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a198fd6abc61f7245c473dcb2752370e7">USER_PASSWORD</a>&#160;&#160;&#160;&quot;NewPassword&quot;</td></tr>
 <tr class="memdesc:a198fd6abc61f7245c473dcb2752370e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's Default password. <br /></td></tr>
 <tr class="separator:a198fd6abc61f7245c473dcb2752370e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa87b7c1c79746a7fa3546adb2e0ace4f"><td class="memItemLeft" align="right" valign="top"><a id="aa87b7c1c79746a7fa3546adb2e0ace4f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:aa87b7c1c79746a7fa3546adb2e0ace4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative address of the mySettings object in EEPROM. <br /></td></tr>
-<tr class="separator:aa87b7c1c79746a7fa3546adb2e0ace4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee908792e407d8f93a63f419cefbffd8"><td class="memItemLeft" align="right" valign="top"><a id="aee908792e407d8f93a63f419cefbffd8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8">myCredentialsAddress</a>&#160;&#160;&#160;<a class="el" href="advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f">mySettingsAddress</a> + sizeof(mySettings)</td></tr>
-<tr class="memdesc:aee908792e407d8f93a63f419cefbffd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative address of the myCredentials object in EEPROM. <br /></td></tr>
-<tr class="separator:aee908792e407d8f93a63f419cefbffd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96932befbe81496318633eab6e623adb"><td class="memItemLeft" align="right" valign="top"><a id="a96932befbe81496318633eab6e623adb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#a96932befbe81496318633eab6e623adb">EEPROM_START_ADDRESS</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a96932befbe81496318633eab6e623adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desired start address of EEPROM used for data objects. <br /></td></tr>
+<tr class="separator:a96932befbe81496318633eab6e623adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">ledMain</a>&#160;&#160;&#160;D7</td></tr>
 <tr class="memdesc:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware pin definitions.  <a href="advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf">More...</a><br /></td></tr>
 <tr class="separator:ad7076a07efdda4e0f77926e4a2f8a8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,9 +158,14 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Randy E. Rainwater (<a href="#" onclick="location.href='mai'+'lto:'+'ran'+'dy'+'rtx'+'@o'+'utl'+'oo'+'k.c'+'om'; return false;">randy<span style="display: none;">.nosp@m.</span>rtx@<span style="display: none;">.nosp@m.</span>outlo<span style="display: none;">.nosp@m.</span>ok.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0.2 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-09-16</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019</dd></dl>
+<h2><a class="anchor" id="autotoc_md21"></a>
+| Version | Date       | Change |</h2>
+<h2><a class="anchor" id="autotoc_md22"></a>
+| 1.0.1   | 2019-09-16 | Corrected error in AdvancedUsage.cpp |</h2>
+<p>| 1.0.2 | 2019-09-17 | revised data object address calculation in <a class="el" href="advanced_usage_8cpp.html">AdvancedUsage.cpp</a>| </p>
 
 <p class="definition">Definition in file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -182,7 +183,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 <p>Define DEBUG_RTX for more verbose log messages from the Class Functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00040">40</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00046">46</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -201,7 +202,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Hardware pin definitions. </p>
 <p>Blue Led on the Photon Module </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00095">95</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00094">94</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -223,7 +224,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Adds a custom data object using the <a class="el" href="class_e_e_p_r_o_m___class.html" title="EEPROM Class.">EEPROM_Class</a> Base Class for user credentials.</p>
 <p>Define LOG_RTX to enable error logging to terminal </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00034">34</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00040">40</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -242,7 +243,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Class Instantiations. </p>
 <p>User's Default Time Zone </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00058">58</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00064">64</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +266,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>loop </p>
 <p>Main Loop </p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00276">276</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00285">285</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>
@@ -296,7 +297,7 @@ SerialLogHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Now we can use the retrieved settings to configure the application</p>
 <p>End of demonstration</p>
 
-<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00107">107</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="advanced_usage_8cpp_source.html#l00106">106</a> of file <a class="el" href="advanced_usage_8cpp_source.html">advancedUsage.cpp</a>.</p>
 
 </div>
 </div>

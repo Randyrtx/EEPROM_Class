@@ -2,10 +2,16 @@
  * @file advancedUsage.cpp
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief 
- * @version 1.0.1
+ * @version 1.0.2
  * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
+ * 
+ * | Version | Date       | Change |
+ * ---------------------------------------------------------------
+ * | 1.0.1   | 2019-09-16 | Corrected error in AdvancedUsage.cpp |
+ * --------------------------------------------------------------------------------------
+ * | 1.0.2   | 2019-09-17 | revised data object address calculation in AdvancedUsage.cpp|
  * 
  */
 
@@ -76,15 +82,9 @@ SerialLogHandler logHandler(115200, LOG_LEVEL_ERROR);
 //! @brief User's Default password
 #define USER_PASSWORD "NewPassword"
 
-// Define the EEPROM addresses for the data object images.
-// We will have two independant objects in EEPROM, each separately maintained.
 
-//! Relative address of the mySettings object in EEPROM
-#define mySettingsAddress 0
-
-//! Relative address of the myCredentials object in EEPROM
-#define myCredentialsAddress mySettingsAddress + sizeof(mySettings) + sizeof(uint16_t) // Make sure to account for the location and size of the previous object(s) and checksum
-
+//! Desired start address of EEPROM used for data objects
+#define EEPROM_START_ADDRESS 0
 
 /******************************************************************************
  * Hardware pin definitions
@@ -136,6 +136,10 @@ void setup()
 	// Place here if only needed in setup.
 	// Place globally if settings will be changed elsewhere in the application.
 
+	// Create an address variable to set starting address for each object
+	// We will have two independant objects in EEPROM, each separately maintained.
+	size_t objectAddress = EEPROM_START_ADDRESS;
+
 	// User Settings Class Object
 	UserSettingsClass mySettings;
 
@@ -155,14 +159,14 @@ void setup()
     // Set following if() statement to true to invalidate objects to simulate first run
     if(false)
     {
-        EEPROM.write(mySettingsAddress, 0);
-        EEPROM.write(myCredentialsAddress, 0);
+        EEPROM.write(EEPROM_START_ADDRESS, 0);
+        EEPROM.write(EEPROM_START_ADDRESS + 50, 0);
     }
     
 	Serial.println("\n***** Retrieving current contents. If it fails, reload defaults.\n");
 
 	// Load Data from EEPROM (This will fail on first run so defaults will be loaded into EEPROM)
-	if (!mySettings.begin(mySettingsAddress))
+	if (!mySettings.begin(objectAddress))
 	{
 		Serial.println("\n !!!!! mySettings Data Corrupted, reset to defaults.\n");
 	}
@@ -170,6 +174,9 @@ void setup()
     {
         Serial.println("\n***** mySettings data retrieved successfully.");
     }
+
+	// bump the address for next item
+	objectAddress += mySettings.getSize();
 
 	// display the settings retrieved
 	Serial.println();
@@ -187,7 +194,7 @@ void setup()
     
     // We have to do a bit more of the work to fix it if it's not valid
     // Serial.println("myEEPROM.begin(myCredentialsAddress, myCredentials)");
-    if (!myEEPROM.begin(myCredentialsAddress, myCredentials))
+    if (!myEEPROM.begin(objectAddress, myCredentials))
     {
         // Save some default data to load
 		Serial.println("\n!!!!! EEPROM Data Corrupted, resetting Credentials to defaults.\n");
@@ -201,6 +208,9 @@ void setup()
         Serial.printlnf("\n***** Success! User name: %s - Password %s\n", myCredentials.userName, myCredentials.password);
 
     }
+	// bump the address for next item
+	objectAddress += myEEPROM.getSize();
+
 	Serial.println("***** Hit any key to continue ***** \n");
 	// wait for user to hit a key
 	while (!Serial.available())

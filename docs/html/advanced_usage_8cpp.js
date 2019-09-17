@@ -1,10 +1,9 @@
 var advanced_usage_8cpp =
 [
     [ "DEBUG_RTX", "advanced_usage_8cpp.html#abac7cbed718c23b6bfc1b96ca0b0ec5a", null ],
+    [ "EEPROM_START_ADDRESS", "advanced_usage_8cpp.html#a96932befbe81496318633eab6e623adb", null ],
     [ "ledMain", "advanced_usage_8cpp.html#ad7076a07efdda4e0f77926e4a2f8a8bf", null ],
     [ "LOG_RTX", "advanced_usage_8cpp.html#ac36d43adaa383ae8f5c9be36245c4a09", null ],
-    [ "myCredentialsAddress", "advanced_usage_8cpp.html#aee908792e407d8f93a63f419cefbffd8", null ],
-    [ "mySettingsAddress", "advanced_usage_8cpp.html#aa87b7c1c79746a7fa3546adb2e0ace4f", null ],
     [ "USER_ANTENNA_TYPE", "advanced_usage_8cpp.html#a1d1cbf6e800c09f5a051e8d6af9dddc4", null ],
     [ "USER_DSTENABLE", "advanced_usage_8cpp.html#a0fe17f14a4325b8db40806d122628888", null ],
     [ "USER_DSTOFFSET", "advanced_usage_8cpp.html#aac1b435af7c112d903be4bcd33b9a4a5", null ],

@@ -2,7 +2,7 @@
  * @file EEPROM_Class.h
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief EEPROM Class Header
- * @version 1.0.1
+ * @version 1.0.2
  * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
@@ -10,8 +10,8 @@
  * | Version | Date       | Change |
  * ---------------------------------------------------------------
  * |         | 2019-09-15 | Removed user name and password items |
- * ---------------------------------------------------------------
- * | 1.0.1   | 2019-09-16 | Corrected error in AdvancedUsage.cpp |
+ * --------------------------------------------------------------------------------
+ * | 1.0.2   | 2019-09-17 | added getSize() member function to return object size |
  * 
  */
 #pragma once
@@ -127,8 +127,16 @@ public:
 		return _verifyChecksum();
 	}
 
+	/**
+	 * @brief Get the Size of the object
+	 * 
+	 * @return size_t object size
+	 */
+	size_t getSize() { return _eepromSize;}
+
+
 protected:
-	/******************************************************************************
+/******************************************************************************
  * Private members
  ******************************************************************************/
 
@@ -180,7 +188,7 @@ protected:
 		}
 	}
 
-	/******************************************************************************
+/******************************************************************************
  * Private functions
  ******************************************************************************/
 

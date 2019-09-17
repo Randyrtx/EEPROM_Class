@@ -105,6 +105,32 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
     WiFi.selectAntenna(mySettings.getAntennaType());
 ```
 
+## Object Address Calculation for Multiple Data Objects
+```cpp
+    // Define desired start of used EEPROM for data objects
+    #define EEPROM_START_ADDRESS 0
+
+	// Create an address variable to set starting address for each object
+	size_t objectAddress = EEPROM_START_ADDRESS;
+
+    // Create first object
+	UserSettingsClass mySettingsObject;
+    mySettingsObject.begin(objectAddress);
+
+	// bump the address for next item
+	objectAddress += mySettings.getSize();
+
+    // Create next object
+    struct UserObject { ... };
+    UserObject myObject;
+    EEPROM_Class<UserObject> myEEPROM;
+    myEEPROM.begin(objectAddress, myObject);
+
+	// bump the address for next item
+	objectAddress += myObject.getSize();
+```
+
+
 Refer to the provided [examples](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples) for more details.
 
 ## Examples:
