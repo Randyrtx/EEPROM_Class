@@ -110,15 +110,15 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
     // Define desired start of used EEPROM for data objects
     #define EEPROM_START_ADDRESS 0
 
-	// Create an address variable to set starting address for each object
-	size_t objectAddress = EEPROM_START_ADDRESS;
+    // Create an address variable to set starting address for each object
+    size_t objectAddress = EEPROM_START_ADDRESS;
 
     // Create first object
-	UserSettingsClass mySettingsObject;
+    UserSettingsClass mySettingsObject;
     mySettingsObject.begin(objectAddress);
 
-	// bump the address for next item
-	objectAddress += mySettings.getSize();
+    // bump the address for next item
+    objectAddress += mySettings.getSize();
 
     // Create next object
     struct UserObject { ... };
@@ -126,8 +126,8 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
     EEPROM_Class<UserObject> myEEPROM;
     myEEPROM.begin(objectAddress, myObject);
 
-	// bump the address for next item
-	objectAddress += myObject.getSize();
+    // bump the address for next item
+    objectAddress += myObject.getSize();
 ```
 
 
