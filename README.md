@@ -118,7 +118,7 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
     mySettingsObject.begin(objectAddress);
 
     // bump the address for next item
-    objectAddress += mySettings.getSize();
+    objectAddress += mySettingsObject.getSize();
 
     // Create next object
     struct UserObject { ... };
@@ -135,11 +135,11 @@ Refer to the provided [examples](https://github.com/Randyrtx/EEPROM_Class/tree/m
 
 ## Examples:
 
-[Basic Usage Example](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples/basicUsage): Demonstrates use of the EEPROM_Class for a small user-supplied data object.
+[Basic Usage Example](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples/basicUsage): Demonstrates use of the UserSettingsClass for common system settings.
 
 
 
-[Advanced Usage Example](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples/advancedUsage): Demonstrates use of the UserSettingsClass for common system settings.
+[Advanced Usage Example](https://github.com/Randyrtx/EEPROM_Class/tree/master/examples/advancedUsage): Demonstrates use of the EEPROM_Class for a small user-defined data object.
 
 ## LICENSE
 Copyright 2019 Randy E. Rainwater
