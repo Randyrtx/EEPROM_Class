@@ -10,8 +10,12 @@
  * | Version | Date       | Change |
  * ---------------------------------------------------------------
  * | 1.0.1   | 2019-09-16 | Corrected error in AdvancedUsage.cpp |
- * --------------------------------------------------------------------------------------
- * | 1.0.2   | 2019-09-17 | revised data object address calculation in AdvancedUsage.cpp|
+ * ---------------------------------------------------------------------------------------
+ * | 1.0.2   | 2019-09-17 | revised data object address calculation in AdvancedUsage.cpp |
+ * ---------------------------------------------------------------------------------------
+ * | 1.1.0   | 2019-09-21 | Changed timeZone to use float for    |
+ * |         |            | consistency with system.             |
+ * ---------------------------------------------------------------
  * 
  */
 
@@ -239,7 +243,7 @@ void setup()
 	{
 		Serial.println("***** Configuring application user settings ***** \n");
 		// This will set the internal clock settings according to the saved user data
-		Serial.printlnf("Time Zone: %d", mySettings.getTimeZone());
+		Serial.printlnf("Time Zone: %0.2f", mySettings.getTimeZone());
         Serial.printlnf("DST Offset %0.2f", mySettings.getDstOffset());
         Serial.printlnf("DST Enabled: %s", (mySettings.isDSTEnabled()) ? "Yes" : "No");
 		Time.zone(mySettings.getTimeZone());		  // Set time zone
