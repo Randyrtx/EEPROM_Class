@@ -23,22 +23,22 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "EEPROM_Class", "index.html", [
-    [ "EEPROM_Class Library for Particle", "index.html", [
-      [ "EEPROM_Class", "index.html#autotoc_md5", null ],
-      [ "UserSettingsClass", "index.html#autotoc_md6", null ],
-      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md7", [
-        [ "User-defined data object (example)", "index.html#autotoc_md8", null ],
-        [ "Updating the object", "index.html#autotoc_md9", null ]
+    [ "EEPROM_Class Library for Particle Version 1.1.0", "index.html", [
+      [ "EEPROM_Class", "index.html#autotoc_md7", null ],
+      [ "UserSettingsClass", "index.html#autotoc_md8", null ],
+      [ "Simple Object use with EEPROM_Class", "index.html#autotoc_md9", [
+        [ "User-defined data object (example)", "index.html#autotoc_md10", null ],
+        [ "Updating the object", "index.html#autotoc_md11", null ]
       ] ],
-      [ "UserSettingsClass  User Configuration Object", "index.html#autotoc_md10", [
-        [ "Data Object", "index.html#autotoc_md11", null ],
-        [ "Class instantiation and startup", "index.html#autotoc_md12", [
-          [ "Typical use:", "index.html#autotoc_md13", null ]
+      [ "UserSettingsClass  User Configuration Object", "index.html#autotoc_md12", [
+        [ "Data Object", "index.html#autotoc_md13", null ],
+        [ "Class instantiation and startup", "index.html#autotoc_md14", [
+          [ "Typical use:", "index.html#autotoc_md15", null ]
         ] ]
       ] ],
-      [ "Object Address Calculation for Multiple Data Objects", "index.html#autotoc_md14", null ],
-      [ "Examples:", "index.html#autotoc_md15", null ],
-      [ "LICENSE", "index.html#autotoc_md16", null ]
+      [ "Object Address Calculation for Multiple Data Objects", "index.html#autotoc_md16", null ],
+      [ "Examples:", "index.html#autotoc_md17", null ],
+      [ "LICENSE", "index.html#autotoc_md18", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

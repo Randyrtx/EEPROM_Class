@@ -2,7 +2,7 @@
  * @file UserSettingsClass.h
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief User Configurations Settings Class Header
- * @version 1.0.1
+ * @version 1.1.0
  * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
@@ -13,6 +13,10 @@
  * |         | 2019-09-15 | Removed user name and password items |
  * ---------------------------------------------------------------
  * | 1.0.1   | 2019-09-16 | Corrected error in AdvancedUsage.cpp |
+ * ---------------------------------------------------------------
+ * | 1.1.0   | 2019-09-21 | Changed timeZone to use float for    |
+ * |         |            | consistency with system.             |
+ * ---------------------------------------------------------------
  * 
  */
 #pragma once
@@ -48,7 +52,7 @@ struct SettingsObject
      * Local Time Zone
      * 
      */
-    int8_t timeZone;
+    float timeZone;
     /** Daylight Savings Time Offset
      * Offset in hours from standard time when daylight savings time is in effect
      */
@@ -123,14 +127,10 @@ public:
 
 
 
-    /******************************************
-     * getters
-     ******************************************/
-
     /** Get Time Zone
      * @return int8_t Time Zone value, UTC -12/+14 hours
      */
-    int8_t getTimeZone() { return _mySettings.timeZone; }
+    float getTimeZone() { return _mySettings.timeZone; }
 
     /** Get Daylight Savings Time offset
      * @return float Offset to standard time when DST is in effect
@@ -151,16 +151,12 @@ public:
      */
     WLanSelectAntenna_TypeDef getAntennaType() { return _mySettings.antennaType; }
 
-    /******************************************
-     * setters
-     ******************************************/
-
     /**
      * @brief Set the Time Zone object
      * 
      * @param tz 
      */
-    void setTimeZone(int8_t tz)
+    void setTimeZone(float tz)
     {
         _mySettings.timeZone = tz;
         writeObject(_mySettings);

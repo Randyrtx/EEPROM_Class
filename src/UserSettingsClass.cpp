@@ -2,7 +2,7 @@
  * @file UserSettingsClass.cpp
  * @author Randy E. Rainwater (randyrtx@outlook.com)
  * @brief  User Configurations Settings Class Member Functions
- * @version 1.0.1
+ * @version 1.1.0
  * @date 2019-09-16
  * 
  * @copyright Copyright (c) 2019
@@ -52,7 +52,7 @@ void UserSettingsClass::reinitialize()
 
     writeObject(_mySettings);
 
-    Log.trace("Time Settings -- Timezone: %d, DST Offset: %f, DST Enabled: %s", _mySettings.timeZone, _mySettings.dstOffset, (_mySettings.dstEnabled) ? "Yes" : "No");
+    Log.trace("Time Settings -- Timezone: %0.2f, DST Offset: %f, DST Enabled: %s", _mySettings.timeZone, _mySettings.dstOffset, (_mySettings.dstEnabled) ? "Yes" : "No");
     Log.trace("Hostname: %s", _mySettings.hostName);
     switch (_mySettings.antennaType)
     {
@@ -80,7 +80,7 @@ void UserSettingsClass::reinitialize()
 void UserSettingsClass::logUserData()
 {
     Log.info("Stored User Data from EEPROM:");
-    Log.info("Timezone: %d", _mySettings.timeZone);
+    Log.info("Timezone: %0.2f", _mySettings.timeZone);
     Log.info("DST Offset: %4.1f", _mySettings.dstOffset);
     Log.info("DST Enabled: %s", (_mySettings.dstEnabled) ? "Yes" : "No");
     Log.info("Hostname: %s", _mySettings.hostName);

@@ -1,5 +1,5 @@
 
-# EEPROM_Class Library for Particle
+# EEPROM_Class Library for Particle Version 1.1.0
 
 This library implements classes for managing data objects stored in the emulated EEPROM of Particle devices.
 
@@ -63,7 +63,7 @@ Refer to the [API Documentation](https://randyrtx.github.io/EEPROM_Class/) and [
 ```cpp
     struct SettingsObject
     {
-        int8_t timeZone;
+        float timeZone;
         float dstOffset;
         bool dstEnabled;
         char hostName[32];
